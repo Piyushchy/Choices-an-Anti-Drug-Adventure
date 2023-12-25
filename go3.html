@@ -11,6 +11,7 @@
 
         canvas {
             display: block;
+            cursor: none;
         }
     </style>
     <title>Mouse and Touch-following Line</title>
@@ -26,6 +27,9 @@
         var movablePoint = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
 
         var obstacle = null; // Variable to store the single obstacle
+        var obstacleSpeed = 3; // Adjust the obstacle speed as needed
+
+        var gameOver = false;
 
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -33,15 +37,16 @@
         function drawLine() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+            if (gameOver) {
+                ctx.fillStyle = "#000";
+                ctx.font = "30px Arial";
+                ctx.fillText("Game Over", canvas.width / 2 - 80, canvas.height / 2);
+                return;
+            }
+
             // Update fixed point position with a smooth effect
             fixedPoint.x += (movablePoint.x - fixedPoint.x) * 0.05;
             fixedPoint.y += (movablePoint.y - fixedPoint.y) * 0.05;
-
-            // Draw the fixed point
-            ctx.beginPath();
-            ctx.arc(fixedPoint.x, fixedPoint.y, 5, 0, 2 * Math.PI);
-            ctx.fillStyle = "#ccc";
-            ctx.fill();
 
             // Draw the line between fixed and movable points
             ctx.beginPath();
@@ -50,25 +55,46 @@
             ctx.strokeStyle = "#000";
             ctx.stroke();
 
+            // Draw the fixed point circle
+            ctx.beginPath();
+            ctx.arc(fixedPoint.x, fixedPoint.y, 10, 0, 2 * Math.PI);
+            ctx.fillStyle = "#ccc";
+            ctx.fill();
+
+            // Draw the movable point circle
+            ctx.beginPath();
+            ctx.arc(movablePoint.x, movablePoint.y, 10, 0, 2 * Math.PI);
+            ctx.fillStyle = "#ccc";
+            ctx.fill();
+
             // Draw and update the obstacle
             if (obstacle) {
+                // Interpolate the obstacle movement for a smoother effect
                 obstacle.x += obstacle.speedX;
                 obstacle.y += obstacle.speedY;
 
                 // Bounce back when reaching the edges
-                if (obstacle.x < 0 || obstacle.x > canvas.width) {
+                if (obstacle.x - obstacle.radius < 0 || obstacle.x + obstacle.radius > canvas.width) {
                     obstacle.speedX = -obstacle.speedX;
                 }
 
-                if (obstacle.y < 0 || obstacle.y > canvas.height) {
+                if (obstacle.y - obstacle.radius < 0 || obstacle.y + obstacle.radius > canvas.height) {
                     obstacle.speedY = -obstacle.speedY;
                 }
 
                 // Draw the obstacle
                 ctx.beginPath();
-                ctx.arc(obstacle.x, obstacle.y, 10, 0, 2 * Math.PI);
+                ctx.arc(obstacle.x, obstacle.y, obstacle.radius, 0, 2 * Math.PI);
                 ctx.fillStyle = "#ff0000";
                 ctx.fill();
+
+                // Check for collision with the circles at the ends of the line
+                if (
+                    isCollision(obstacle, fixedPoint, { x: fixedPoint.x, y: fixedPoint.y + 20 }) ||
+                    isCollision(obstacle, movablePoint, { x: movablePoint.x, y: movablePoint.y + 20 })
+                ) {
+                    gameOver = true;
+                }
 
                 // Check for collision with the line
                 if (isCollision(obstacle, fixedPoint, movablePoint)) {
@@ -138,13 +164,14 @@
             obstacle = {
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                speedX: (Math.random() - 0.5) * 5, // Random speed between -5 and 5
-                speedY: (Math.random() - 0.5) * 5,
+                radius: 10,
+                speedX: (Math.random() - 0.5) * obstacleSpeed,
+                speedY: (Math.random() - 0.5) * obstacleSpeed,
             };
         }
 
         // Call drawLine every 16 milliseconds (about 60 frames per second)
-        setInterval(drawLine, 16);
+        setInterval(drawLine, 13);
     </script>
 </body>
 </html>
