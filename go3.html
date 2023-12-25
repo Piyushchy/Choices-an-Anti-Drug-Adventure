@@ -18,6 +18,7 @@
 </head>
 <body>
     <canvas id="myCanvas"></canvas>
+    <img src="image/pill-png-hd-pills-transparent-png-sticker-3000.png" id="lamp" width="32" height="32">
 
     <script>
         var canvas = document.getElementById("myCanvas");
@@ -85,7 +86,9 @@
                 // Draw the obstacle
                 ctx.beginPath();
                 ctx.arc(obstacle.x, obstacle.y, obstacle.radius, 0, 2 * Math.PI);
-                ctx.fillStyle = "#ff0000";
+                const img = document.getElementById("lamp");
+                const pat = ctx.createPattern(img, "repeat");
+                ctx.fillStyle = pat;
                 ctx.fill();
 
                 // Check for collision with the circles at the ends of the line
