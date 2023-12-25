@@ -1,7 +1,0 @@
-var c= document.getElementById("myCanvas")
-var ctx = c.getContext("2d")
-ctx.beginPath()
-ctx.moveTo(300,200)
-ctx.lineTo(550,50)
-ctx.lineTo(50,50)
-ctx.stroke()
