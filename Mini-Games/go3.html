@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body, html {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+            cursor: none;
+        }
+    </style>
+    <title>Mouse and Touch-following Line</title>
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+    <img src="image/pill-png-hd-pills-transparent-png-sticker-3000.png" id="lamp" width="32" height="32">
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        var fixedPoint = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+        var movablePoint = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
+        var obstacle = null; // Variable to store the single obstacle
+        var obstacleSpeed = 3; // Adjust the obstacle speed as needed
+
+        var gameOver = false;
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        function drawLine() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            if (gameOver) {
+                ctx.fillStyle = "#000";
+                ctx.font = "30px Arial";
+                ctx.fillText("Game Over", canvas.width / 2 - 80, canvas.height / 2);
+                return;
+            }
+
+            // Update fixed point position with a smooth effect
+            fixedPoint.x += (movablePoint.x - fixedPoint.x) * 0.05;
+            fixedPoint.y += (movablePoint.y - fixedPoint.y) * 0.05;
+
+            // Draw the line between fixed and movable points
+            ctx.beginPath();
+            ctx.moveTo(fixedPoint.x, fixedPoint.y);
+            ctx.lineTo(movablePoint.x, movablePoint.y);
+            ctx.strokeStyle = "#000";
+            ctx.stroke();
+
+            // Draw the fixed point circle
+            ctx.beginPath();
+            ctx.arc(fixedPoint.x, fixedPoint.y, 10, 0, 2 * Math.PI);
+            ctx.fillStyle = "#ccc";
+            ctx.fill();
+
+            // Draw the movable point circle
+            ctx.beginPath();
+            ctx.arc(movablePoint.x, movablePoint.y, 10, 0, 2 * Math.PI);
+            ctx.fillStyle = "#ccc";
+            ctx.fill();
+
+            // Draw and update the obstacle
+            if (obstacle) {
+                // Interpolate the obstacle movement for a smoother effect
+                obstacle.x += obstacle.speedX;
+                obstacle.y += obstacle.speedY;
+
+                // Bounce back when reaching the edges
+                if (obstacle.x - obstacle.radius < 0 || obstacle.x + obstacle.radius > canvas.width) {
+                    obstacle.speedX = -obstacle.speedX;
+                }
+
+                if (obstacle.y - obstacle.radius < 0 || obstacle.y + obstacle.radius > canvas.height) {
+                    obstacle.speedY = -obstacle.speedY;
+                }
+
+                // Draw the obstacle
+                ctx.beginPath();
+                ctx.arc(obstacle.x, obstacle.y, obstacle.radius, 0, 2 * Math.PI);
+                const img = document.getElementById("lamp");
+                const pat = ctx.createPattern(img, "repeat");
+                ctx.fillStyle = pat;
+                ctx.fill();
+
+                // Check for collision with the circles at the ends of the line
+                if (
+                    isCollision(obstacle, fixedPoint, { x: fixedPoint.x, y: fixedPoint.y + 20 }) ||
+                    isCollision(obstacle, movablePoint, { x: movablePoint.x, y: movablePoint.y + 20 })
+                ) {
+                    gameOver = true;
+                }
+
+                // Check for collision with the line
+                if (isCollision(obstacle, fixedPoint, movablePoint)) {
+                    obstacle = null; // Remove the obstacle
+                }
+            } else {
+                // If no obstacle exists, create a new one
+                createObstacle();
+            }
+        }
+
+        // Function to check for collision between a point and a line segment
+        function isCollision(point, lineStart, lineEnd) {
+            var d1 = dist(point.x, point.y, lineStart.x, lineStart.y);
+            var d2 = dist(point.x, point.y, lineEnd.x, lineEnd.y);
+            var lineLength = dist(lineStart.x, lineStart.y, lineEnd.x, lineEnd.y);
+
+            // Tolerance to account for floating-point precision errors
+            var tolerance = 0.5;
+
+            return d1 + d2 >= lineLength - tolerance && d1 + d2 <= lineLength + tolerance;
+        }
+
+        // Function to calculate the distance between two points
+        function dist(x1, y1, x2, y2) {
+            return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        }
+
+        function updatePosition(event) {
+            var clientX, clientY;
+
+            if (event.touches && event.touches.length > 0) {
+                // If multiple touch points, average their positions
+                var sumX = 0;
+                var sumY = 0;
+
+                for (var i = 0; i < event.touches.length; i++) {
+                    sumX += event.touches[i].clientX;
+                    sumY += event.touches[i].clientY;
+                }
+
+                clientX = sumX / event.touches.length;
+                clientY = sumY / event.touches.length;
+            } else {
+                // Single touch or mouse event
+                clientX = event.clientX || event.touches[0].clientX;
+                clientY = event.clientY || event.touches[0].clientY;
+            }
+
+            movablePoint.x = clientX;
+            movablePoint.y = clientY;
+
+            drawLine();
+        }
+
+        window.addEventListener("mousemove", updatePosition);
+        window.addEventListener("touchmove", updatePosition);
+
+        window.addEventListener("resize", function() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            drawLine();
+        });
+
+        // Function to create a single obstacle
+        function createObstacle() {
+            obstacle = {
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: 10,
+                speedX: (Math.random() - 0.5) * obstacleSpeed,
+                speedY: (Math.random() - 0.5) * obstacleSpeed,
+            };
+        }
+
+        // Call drawLine every 16 milliseconds (about 60 frames per second)
+        setInterval(drawLine, 13);
+    </script>
+</body>
+</html>
