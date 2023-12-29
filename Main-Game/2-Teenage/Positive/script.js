@@ -4,9 +4,7 @@ const rightHalf = document.querySelector(".right-half");
 var choiceBox = document.querySelector(".choice-box");
 var intro = document.querySelector(".intro");
 const menuItems = document.querySelector(".menu-items");
-localStorage.setItem("isStorytelling", true);
-
-sharedIsStoryTelling = localStorage.getItem("isStorytelling");
+let sharedIsStoryTelling = localStorage.getItem("isStorytelling");
 
 console.log("sharedIsStoryTelling = " + sharedIsStoryTelling);
 
@@ -178,7 +176,7 @@ function choiceMade(choice) {
 
 function checkStoryTeller() {
   const storyTeller = document.querySelector(".toggle-button-story");
-  if (sharedIsStoryTelling) {
+  if (sharedIsStoryTelling === "true") {
     storyTeller.textContent = "ON";
     storyTeller.style.backgroundColor = "green";
     sharedIsStoryTelling = true;
@@ -193,16 +191,14 @@ function toggleStoryTeller() {
   const storyTeller = document.querySelector(".toggle-button-story");
   if (sharedIsStoryTelling) {
     sharedIsStoryTelling = false;
-    localStorage.setItem("isStorytelling", sharedIsStoryTelling);
+    localStorage.setItem("isStorytelling", false);
     console.log("Storytelling turned off");
-    console.log("sharedIsStoryTelling = " + sharedIsStoryTelling);
     storyTeller.textContent = "OFF";
     storyTeller.style.backgroundColor = "transparent";
   } else {
     sharedIsStoryTelling = true;
-    localStorage.setItem("isStorytelling", sharedIsStoryTelling);
+    localStorage.setItem("isStorytelling", true);
     console.log("Storytelling turned on");
-    console.log("sharedIsStoryTelling = " + sharedIsStoryTelling);
     storyTeller.textContent = "ON";
     storyTeller.style.backgroundColor = "green";
   }

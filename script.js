@@ -1,1 +1,2 @@
-let isStorytelling = true;
+// let isStorytelling = true;
+// localStorage.setItem("isStorytelling", isStorytelling);
