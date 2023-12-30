@@ -139,7 +139,11 @@ function speak(text) {
   // Get the list of available voices
   const voices = synth.getVoices();
 
-  utterance.voice = voices[10]; // Set the voice
+  // Find a female voice with a pleasant tone (customize as needed)
+  const femaleVoice = voices.find(voice => voice.name.includes('Female') && voice.lang.includes('en'));
+
+  // Set the selected voice
+  utterance.voice = femaleVoice || voices[0]; // Use the first available voice if a suitable female voice is not found
 
   // Additional voice settings (customize as needed)
   utterance.rate = 1.0; // Speech rate (adjust as needed)

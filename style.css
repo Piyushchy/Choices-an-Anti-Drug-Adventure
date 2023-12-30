@@ -1,0 +1,400 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+nav {
+    display: flex;
+    height: 70px;
+    width: 100%;
+    background-color: rgba(27, 25, 25, 0.788);
+    align-items: center;
+    position: fixed; /* Fixed positioning to make it stay at the top */
+    top: 0; /* Set distance from the top */
+    z-index: 1000; /* Set a high z-index to ensure it's above other elements */
+    transition: all 0.3s ease;
+    scroll-snap-align: start;
+}
+
+nav * {
+    /* border: 1px solid red; */
+}
+
+.logo {
+    height: 50%;
+    margin-left: 30px;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    outline: none;
+}
+
+.nav-links li a:hover {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.nav-links li a:active {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.hamburger-menu {
+    position: absolute;
+    right: 0;
+    background-image: url(/assets/menu-icon.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border: none;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
+    margin-right: 30px;
+    display: none;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu:focus {
+    outline: none;
+}
+
+.menu-overlay {
+    border: 1px solid red;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 50vh;
+    width: 200px;
+    background-color: rgba(27, 25, 25, 0.788);
+    z-index: 100;
+    right: -100%;
+    border-radius: 0 0 0 10px;
+    transition: all 0.3s ease;
+}
+
+.menu-overlay-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu-overlay-items li {
+    margin-bottom: 25px;
+}
+
+.menu-overlay-items li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.menu-overlay-items li a:hover {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+}
+
+
+main {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden; /* Ensure the video doesn't affect scrolling */
+    position: relative; /* Ensure other absolute-positioned elements are positioned relative to this */
+    margin-top: 70px;
+    scroll-snap-align: start;
+}
+
+    main *{
+        /* border: 1px solid red; */
+    }
+
+    .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+
+    .tag-line {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        position: absolute; /* Use absolute positioning to overlay on top of the video */
+        top: 10px;
+        left: 0;
+        transition: all 1s ease;
+        /* border: 1px solid green; */
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .tag-line h1{
+        font-family: 'Lora', serif;
+        font-size: 80px;
+        font-weight: 700;
+        margin: 0 30px; 
+        transition: all 2s ease;
+    }
+
+    .tag-line h2{
+        font-family: 'Lora', serif;
+        font-size: 50px;
+        font-weight: 600;
+        margin: 0px 30px;
+        transition: all 2s ease;
+    }
+
+    .description {
+        font-family: 'Poppins', sans-serif;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 500;
+        margin-left: 30px;
+        margin-top: 17rem;
+        position: absolute; /* Use absolute positioning to overlay on top of the video */
+        left: -100%;
+        transition: all 2s ease;
+        opacity: 0;
+    }
+
+    .description strong {
+        font-family: 'Lora', serif;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    .about {
+        color: #fff;
+        display: flex;
+        padding: 20px;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        scroll-snap-align: start;
+    }
+
+    .game-redirect-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        height: 30%;
+        position:absolute;
+        bottom: 10px;
+        right: 20px;
+        /* border: 1px solid red; */
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(5px);
+        border-radius: 20px;
+        right: -100%;
+        transition: all 5s ease;
+    }
+
+    .game-redirect-container h2 {
+        color: black;
+        /* text-shadow: 2px 5px 5px #0edf23; */
+        font-family: 'Lora', serif;
+        font-size: 50px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .rules{
+        list-style-type:disc;
+        /* text-decoration:underline; */
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+        justify-content: center;
+        /* align-items: center; */
+        margin-bottom: 20px;
+        display: none;
+        transition: all 5s ease-in-out;; 
+    }
+
+    .rules li {
+        margin-bottom: 20px;
+        font-family:'Lora', serif;
+        font-size: 20px;
+        font-weight: 600;
+    }
+ 
+    .game-redirect-button {
+        width: 220px;
+        height: 50px;
+        border: none;
+        outline: none;
+        color: #fff;
+        background: #111;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        border-radius: 10px;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .game-redirect-button:before {
+        content: '';
+        background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+        position: absolute;
+        top: -2px;
+        left:-2px;
+        background-size: 400%;
+        z-index: -1;
+        filter: blur(5px);
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        animation: glowing 20s linear infinite;
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+        border-radius: 10px;
+    }
+    
+    .game-redirect-button:active {
+        color: #000
+    }
+    
+    .game-redirect-button:active:after {
+        background: transparent;
+    }
+    
+    .game-redirect-button:hover:before {
+        opacity: 1;
+    }
+    
+    .game-redirect-button:after {
+        z-index: -1;
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #111;
+        left: 0;
+        top: 0;
+        border-radius: 10px;
+    }
+    
+    @keyframes glowing {
+        0% { background-position: 0 0; }
+        50% { background-position: 400% 0; }
+        100% { background-position: 0 0; }
+    }
+
+  
+    @media screen and (max-width: 1150px) {
+        .nav-links {
+            width: 60%;
+        }
+
+        .tag-line {
+            width: 100%;
+        }
+
+        .description {
+            width: 50%;
+        }
+        
+    }
+
+    @media screen and (max-width: 620px){
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: 70% 50%;
+            z-index: -1;
+        }
+
+        .nav-links {
+            display: none;
+        }
+
+        .hamburger-menu {
+            display: flex;
+        }
+
+        .tag-line {
+            width: 100%;
+            text-align: center;
+            margin-left: 0;
+        }
+
+
+        .main{
+            height: 110vh;
+        }
+
+        .description {
+            display: none;
+        }
+
+        .description br{
+            display: none;
+        }
+
+        .game-redirect-container {
+            width: 90%;
+            height: 45%;
+            /* margin-top: 50px; */
+            bottom:-100%;
+            right: 50%;
+            transform: translateX(50%);
+            transition: all 1s ease-in-out;
+        }
+
+        .game-redirect-container h2 {
+            font-size: 30px;
+            margin-bottom:7px;
+        }
+
+        .rules{
+            display: block;
+            width: 80%;
+            border: 1px solid red;
+        }
+
+        .rules li {
+            font-family:'Lora', serif;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom:5px;
+        }
+
+
+
+        
+    }
