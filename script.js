@@ -135,11 +135,13 @@ const menuButton = document.querySelector(".hamburger-menu");
 let isMenuOpen = false;
 
 function showMenu() {
+  isMenuOpen = true;
   mobileMenu.style.right = "0";
   menuButton.style.backgroundImage = "url(/assets/cross-icon.png)";
 }
 
 function hideMenu() {
+  isMenuOpen = false;
   mobileMenu.style.right = "-100%";
   menuButton.style.backgroundImage = "url(/assets/menu-icon.png)";
 }
@@ -148,10 +150,8 @@ function toggleMenu() {
   if (!isMenuOpen) {
     showMenu();
     console.log("Showing menu");
-    isMenuOpen = true;
   } else {
     hideMenu();
     console.log("Hiding menu");
-    isMenuOpen = false;
   }
 }

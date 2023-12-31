@@ -17,15 +17,17 @@
 
         <ul class="nav-links">
             <li><a href="#homeSection">Home</a></li>
-            <li><a href="#aboutSection">About Team</a></li>
+            <li><a href="#aboutTeam">About Team: <strong>Sudo</strong></a></li>
+            <li><a href="#aboutProject">About Project</a></li>
             <li><a href="#">Ai Counselling</a></li>
         </ul>
         <button class="hamburger-menu" onclick="toggleMenu()"></button>
         <div class="menu-overlay">
             <ul class="menu-overlay-items">
-                <li><a href="#homeSection">Home</a></li>
-                <li><a href="#aboutSection">About Team</a></li>
-                <li><a href="#">Ai Counselling</a></li>
+                <li><a href="#homeSection" onclick="hideMenu()">Home</a></li>
+                <li><a href="#aboutTeam" onclick="hideMenu()">About Team: <strong>Sudo</strong></a></li>
+                <li><a href="#aboutProject" onclick="hideMenu()">About Project</a></li>
+                <li><a href="#" onclick="hideMenu()">Ai Counselling</a></li>
             </ul>
         </div>
     </nav>
@@ -63,8 +65,89 @@
         </div>
     </main>
 
-    <div id="aboutSection" class="about">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quibusdam repellat sunt quos iure ipsa
+    <div id="aboutTeam" class="about about-team">
+        <h1>About Our Team: <strong>Sudo</strong></h1>
+        <div class="team-members">
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="https://media.licdn.com/dms/image/D4D03AQFg7zU_GLhX5Q/profile-displayphoto-shrink_200_200/0/1689414065287?e=2147483647&v=beta&t=Xd__cVA3nevSnqbLUimJIfplzF_5Rh8wpRcSPBXh9DQ"
+                        alt="Team Member">
+                </div>
+                <div class="member-description even">
+                    <h3>Kunal Shah</h3>
+                    <ul>
+                        <li>First-Year | Bachelor's in Computer Applications</li>
+                        <li>SK Somaiya College, Somaiya Vidyavihar University</li>
+                        <li>Front-End Developer</li>
+                    </ul>
+                    <div class="member-socials">
+                        <a href="https://www.linkedin.com/in/kunalshah017" target="_blank"><img
+                                src="/assets/linkedin.png" alt="LinkedIn"></a>
+                        <a href="https://kunalshah017.vercel.app" target="_blank" alt="portfolio"><img
+                                src="/assets/portfolio.png" alt="Portfolio">Personal Website</a>
+                    </div>
+                </div>
+            </div>
+            <div class=" team-member">
+                <div class="member-description odd">
+                    <h3>Piyush Chaudhary</h3>
+                    <ul>
+                        <li>First-Year | Bachelor's of Technology - Computer Engineering</li>
+                        <li>KJ Somaiya College, Somaiya Vidyavihar University</li>
+                        <li>Front-End Developer</li>
+                    </ul>
+                    <div class="member-socials">
+                        <a href="https://www.linkedin.com/in/piyush-chaudhary-9b5999187/" target="_blank"><img
+                                src="/assets/linkedin.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                <div class="member-image">
+                    <img src="https://media.licdn.com/dms/image/D4E03AQFDvyJUinwVWg/profile-displayphoto-shrink_200_200/0/1686121558557?e=1709769600&v=beta&t=dH55upHpNmUQPwJcT5ijWPn3IUGV8A8E1YHK6uANJVE"
+                        alt="Team Member">
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="member-image">
+                    <img src="https://media.licdn.com/dms/image/D4D03AQE9M7-ltniH2A/profile-displayphoto-shrink_200_200/0/1696560440213?e=1709769600&v=beta&t=Uws9XgdFyHljNcJDrTjN8h4Cc0inga0PFcU38YU_VAw"
+                        alt="Team Member">
+                </div>
+                <div class="member-description even">
+                    <h3>Raunak Gupta</h3>
+                    <ul>
+                        <li>First-Year | Bachelor's of Technology - Computer Engineering</li>
+                        <li>KJ Somaiya College, Somaiya Vidyavihar University</li>
+                        <li>Front-End Developer</li>
+                    </ul>
+                    <div class="member-socials">
+                        <a href="https://www.linkedin.com/in/raunak-gupta-7b3503270/" target="_blank"><img
+                                src="/assets/linkedin.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="member-description odd">
+                    <h3>Sarthak Wage</h3>
+                    <ul>
+                        <li>First-Year | Bachelor's of Technology - Computer Engineering</li>
+                        <li>KJ Somaiya College, Somaiya Vidyavihar University</li>
+                        <li>AI & Front-End Developer</li>
+                    </ul>
+                    <div class="member-socials">
+                        <a href="https://www.linkedin.com/in/sarthak-wage-993b5a282/" target="_blank"><img
+                                src="/assets/linkedin.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                <div class="member-image">
+                    <img src="https://media.licdn.com/dms/image/D5635AQGXW0U7XhrOLA/profile-framedphoto-shrink_200_200/0/1660002772504?e=1704672000&v=beta&t=e1_WXISy3lg3IX0wrnoj8H3nXyFN0Wa8NICw1TpoYzQ"
+                        alt="Team Member">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id=" aboutProject" class="about">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit quibusdam repellat sunt quos iure
+        ipsa
         ratione quas temporibus autem. Nam dolorum asperiores assumenda, eveniet, atque, quasi impedit culpa
         sequi
         tempore numquam quaerat possimus reprehenderit ex praesentium necessitatibus. In blanditiis itaque
