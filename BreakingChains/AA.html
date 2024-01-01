@@ -20,14 +20,14 @@
         </button>
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active mr-5">
               <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item mr-5">
               <a class="nav-link" href="#">Link</a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown mr-5">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Dropdown
               </a>
@@ -69,6 +69,48 @@
     
       </div>
       </div>
+      <!-- links  -->
+      <div class="card">
+        <h5 class="card-header">Featured</h5>
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary" id="link1">Go AA website</a>
+        </div>
+      </div>
+      <div class="card">
+        <h5 class="card-header">Featured</h5>
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary" id="link2">Go AA website</a>
+        </div>
+      </div>
+      <div class="card">
+        <h5 class="card-header">Featured</h5>
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary" id="link3">Go AA website</a>
+        </div>
+      </div>
+      <div class="card">
+        <h5 class="card-header">Featured</h5>
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary" id="link4">Go AA website</a>
+        </div>
+      </div>
+      <div class="card">
+        <h5 class="card-header">Featured</h5>
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary" id="link5">Go AA website</a>
+        </div>
+      </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -80,22 +122,28 @@
         var linksArray;
         // Fetch the text file using the Fetch API
         fetch(fileUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
-        .then(text => {
-            // Parse the text and create an array of links
-            linksArray = text.split('\n');
-            
-            // Display the links in an HTML list
-            
-        })
-        .catch(error => {
-            console.error('Error fetching the file:', error);
-        });
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(text => {
+                // Parse the text and create an array of links
+                linksArray = text.split('\n');
+
+                // Display the links in anchor elements
+                for (var i = 0; i < linksArray.length; i++) {
+                    var link = linksArray[i].trim(); // Remove leading/trailing whitespaces
+                    if (link !== '') {
+                        var linkId = 'link' + (i + 1);
+                        document.getElementById(linkId).href = link;
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching the file:', error);
+            });
         range.oninput = () =>
         document.body.style.setProperty('--pos', range.value + '%');
     </script>
