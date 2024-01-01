@@ -50,7 +50,7 @@ preloadImages(imageUrls)
     if (window.innerWidth > 760) {
       showIntro();
       showFullScreenMsg();
-      setTimeout(hideFullScreenMsg, 5000);
+      setTimeout(hideFullScreenMsg, 7000);
       setTimeout(showRightHalf, 5000);
     }
   })

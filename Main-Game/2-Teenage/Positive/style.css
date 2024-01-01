@@ -30,7 +30,7 @@ body{
 .fullscreen-msg{
     /* border: 1px solid red; */
     position: absolute;
-    top: 12%;
+    top: -100%;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(109, 104, 104, 0.671);
@@ -40,7 +40,17 @@ body{
     padding-top: 2rem;
     border-radius: 15px 15px;
     display: none;
-    transition: all 1s ease-in-out;
+    animation: slideIn 1s ease-out forwards; /* Animation definition */
+}
+
+@keyframes slideIn {
+    from {
+        top: -100%;
+    }
+
+    to {
+        top: 12%;
+    }
 }
 
 .fullscreen-msg h2{
@@ -86,7 +96,7 @@ body{
     height: 10px;
     background-color: rgb(255, 255, 255);
     border-radius: 10px 10px 15px 15px;
-    animation: reduceWidth 5s ease-out forwards;
+    animation: reduceWidth 7s ease-out forwards;
 }
 
 @keyframes reduceWidth{
