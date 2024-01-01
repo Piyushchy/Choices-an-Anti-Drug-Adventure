@@ -1,0 +1,68 @@
+@layer demo {
+    .compare {
+      display: grid;
+      
+      > * {
+        grid-area: 1 / 1;
+      }
+      
+      > section {
+        display: grid;
+        place-content: center;
+      }
+      
+      .before {
+        -webkit-mask: linear-gradient(to right, #000 0, var(--pos, 50%), #0000 0);
+                mask: linear-gradient(to right, #000 0, var(--pos, 50%), #0000 0);
+      }
+  
+      .after {
+        -webkit-mask: linear-gradient(to right, #0000 0, var(--pos, 50%), #000 0);
+                mask: linear-gradient(to right, #0000 0, var(--pos, 50%), #000 0);
+      }
+  
+      > input[type="range"] {
+        z-index: 1;
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+        background: transparent;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+  
+        &::-webkit-slider-thumb {
+          -webkit-appearance: none;
+                  appearance: none;
+          inline-size: 4px;
+          block-size: 100%;
+          background-color: CanvasText;
+        } 
+  
+        &::-moz-range-thumb {
+          -moz-appearance: none;
+               appearance: none;
+          inline-size: 4px;
+          block-size: 100dvh;
+          background-color: CanvasText;
+        }
+      }
+    }
+    
+    img {
+      max-block-size: 80dvh;
+      max-inline-size: 100%;
+    }
+  }
+  
+  @layer demo.support {
+    * {
+      box-sizing: border-box;
+      margin: 0;
+    }
+  
+
+  }
+  .compare #typed {
+    width: auto;
+    text-align: center;
+}
