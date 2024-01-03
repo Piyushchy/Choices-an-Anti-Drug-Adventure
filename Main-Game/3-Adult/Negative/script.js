@@ -61,10 +61,10 @@ if (window.innerWidth > 760) {
 
 let currentStoryIndex = 0;
 const story = [
-  "Years have passed. Raj, now a teenager and 15 years old",
-  "his parents have been able to help Ravi overcome his addiction. Raj has learned from his brother's experience and is more aware of the dangers of drugs.",
-  "At school, a charismatic group promises acceptance and escape from everyday pressures.",
-  "They share a seemingly harmless powder that boosts confidence and makes the mundane exciting. Friends offers Raj the powder.",
+  "Raj is now in adult phase of his life, and 25 years old.",
+  "he has been using the powder for years. He has become dependent on it to function.",
+  "Due to this addiction, it has become difficult for him to make correct decisions. He is not able to resist the temptation of drugs.",
+  "One day, his old friend from school days appears seeing condition of Raj he advises him to seek professional help.",
   "What should Raj do?",
   // Add more story lines
 ];
@@ -187,9 +187,9 @@ function toggleMenu() {
 
 function choiceMade(choice) {
   if (choice === 1) {
-    window.location.href = "/Main-Game/3-Adult/Negative/index.html";
+    window.location.href = "/Main-Game/4-Old/Negative/index.html";
   } else if (choice === 2) {
-    window.location.href = "/Main-Game/3-Adult/Positive/index.html";
+    window.location.href = "/Main-Game/4-Old/Positive/index.html";
   }
 }
 

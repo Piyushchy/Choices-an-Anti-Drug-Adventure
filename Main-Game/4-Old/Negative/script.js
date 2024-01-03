@@ -19,6 +19,7 @@ const imageUrls = [
   "assets/1.jpg",
   "assets/2.jpg",
   "assets/3.jpg",
+  "assets/4.jpg",
   // Add more image URLs as needed
 ];
 
@@ -61,10 +62,11 @@ if (window.innerWidth > 760) {
 
 let currentStoryIndex = 0;
 const story = [
-  "Years have passed. Raj, now a teenager and 15 years old",
-  "his parents have been able to help Ravi overcome his addiction. Raj has learned from his brother's experience and is more aware of the dangers of drugs.",
-  "At school, a charismatic group promises acceptance and escape from everyday pressures.",
-  "They share a seemingly harmless powder that boosts confidence and makes the mundane exciting. Friends offers Raj the powder.",
+  "Raj is now in old age of his life.",
+  "He has been using all types of drugs and Syringes for years now. He has become dependent on it to function.",
+  "He is unable to hold a job, have family or friends. Due to this addiction.",
+  "at last he decides to cure his years of addiction and live his remaining little life in peace. He decides to seek professional help for his addiction.",
+  "Professionals guide and recommend the correct medication for his addiction. but the process is very strict to follow.",
   "What should Raj do?",
   // Add more story lines
 ];
@@ -187,9 +189,9 @@ function toggleMenu() {
 
 function choiceMade(choice) {
   if (choice === 1) {
-    window.location.href = "/Main-Game/3-Adult/Negative/index.html";
+    window.location.href = "/Main-Game/5-Endings/Negative/index.html";
   } else if (choice === 2) {
-    window.location.href = "/Main-Game/3-Adult/Positive/index.html";
+    window.location.href = "/Main-Game/5-Endings/Positive/index.html";
   }
 }
 

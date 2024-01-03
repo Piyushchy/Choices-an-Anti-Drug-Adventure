@@ -15,11 +15,11 @@ let isIntroShown = false;
 let isMenuShown = false;
 
 const imageUrls = [
-  "assets/0.png",
-  "assets/1.png",
-  "assets/2.png",
-  "assets/3.png",
-  "assets/4.png",
+  "assets/0.jpg",
+  "assets/1.jpg",
+  "assets/2.jpg",
+  "assets/3.jpg",
+  "assets/4.jpg",
   // Add more image URLs as needed
 ];
 
@@ -62,11 +62,11 @@ if (window.innerWidth > 760) {
 
 let currentStoryIndex = 0;
 const story = [
-  "Meet Raj, Raj is a bright and curious boy",
-  "His playful days revolve around building sandcastles and catching fireflies",
-  "One day... Raj finds his older brother, Ravi, acting strangely.",
-  "Ravi’s once vibrant eyes are glazed over, and his playful laughter has been replaced by a vacant smile. ",
-  "Ravi hides mysterious, colorful candies that seem to spark immense energy, followed by long periods of withdrawal and irritability.",
+  "Years have passed. Raj is now a teenager and 15 years old, struggles with the memory of his brother's battle.",
+  " He feels isolated and yearns for a sense of belonging.",
+  "At school, a charismatic group promises acceptance and escape from everyday pressures.",
+  "They share a seemingly harmless powder that boosts confidence and makes the mundane exciting.",
+  "as Raj has previously been exposed to drugs, he is more susceptible to addiction. and he is not able to resist the temptation.",
   "What should Raj do?",
   // Add more story lines
 ];
@@ -189,9 +189,9 @@ function toggleMenu() {
 
 function choiceMade(choice) {
   if (choice === 1) {
-    window.location.href = "/Main-Game/2-Teenage/Negative/index.html";
+    window.location.href = "/Main-Game/3-Adult/Negative/index.html";
   } else if (choice === 2) {
-    window.location.href = "/Main-Game/2-Teenage/Positive/index.html";
+    window.location.href = "/Main-Game/3-Adult/Positive/index.html";
   }
 }
 
@@ -295,7 +295,7 @@ function hideFullScreenMsg() {
 }
 
 function updateBackground() {
-  background.style.backgroundImage = `url('assets/${currentStoryIndex}.png')`;
+  background.style.backgroundImage = `url('assets/${currentStoryIndex}.jpg')`;
 }
 
 function updateDialogue() {

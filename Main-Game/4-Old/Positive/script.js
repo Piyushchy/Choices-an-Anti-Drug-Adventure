@@ -61,11 +61,10 @@ if (window.innerWidth > 760) {
 
 let currentStoryIndex = 0;
 const story = [
-  "Years have passed. Raj, now a teenager and 15 years old",
-  "his parents have been able to help Ravi overcome his addiction. Raj has learned from his brother's experience and is more aware of the dangers of drugs.",
-  "At school, a charismatic group promises acceptance and escape from everyday pressures.",
-  "They share a seemingly harmless powder that boosts confidence and makes the mundane exciting. Friends offers Raj the powder.",
-  "What should Raj do?",
+  "Raj is now old and 70 years old. He has been living a healthy life. He has good family and friends.",
+  "He has seen all the ups and downs of life. He has been able to overcome all the challenges of life.",
+  "also he guides his younger generation to live a healthy life, and consult with parents and professionals if they face any wrong situations in life.",
+  "with all the cherishable memories and happiness he dies at the age of 80. having many loved ones around him.",
   // Add more story lines
 ];
 
@@ -80,6 +79,14 @@ const synth = window.speechSynthesis;
 function handleScreenClick(event) {
   const clickedElement = event.target;
 
+  if (clickedElement.closest(".outro")) {
+    window.location.href = "/index.html";
+  }
+
+  if (currentStoryIndex === 3) {
+    sharedIsStoryTelling = false;
+    showOutro();
+  }
   if (
     !isIntroShown &&
     !clickedElement.closest(".mobile-popup") &&
@@ -89,6 +96,7 @@ function handleScreenClick(event) {
   ) {
     isIntroShown = true;
     hideIntro();
+    hideOutro();
     hideRightHalf();
     hideMenu();
     speak(story[currentStoryIndex]);
@@ -279,6 +287,19 @@ function hideRightHalf() {
 function showIntro() {
   intro.style.display = "flex";
   intro.style.visibility = "visible";
+}
+
+function showOutro() {
+  const outro = document.querySelector(".outro");
+  outro.style.display = "flex";
+  outro.style.visibility = "visible";
+  dialogueBox.style.display = "none";
+}
+
+function hideOutro() {
+  const outro = document.querySelector(".outro");
+  outro.style.display = "none";
+  outro.style.visibility = "hidden";
 }
 
 function showFullScreenMsg() {

@@ -2,7 +2,7 @@
 
 **Childhood (6 years old):**
 
-Meet Raj, Raj is a bright and curious boy. His playful days revolve around building sandcastles and catching fireflies. One day, Raj finds his older brother, Ravi, acting strangely. Ravi’s once vibrant eyes are glazed over, and his playful laughter has been replaced by a vacant smile. Ravi hides mysterious, colorful candies that seem to spark immense energy, followed by long periods of withdrawal and irritability.
+Meet Raj, Raj is a bright and curious boy. His playful days revolve around building sandcastles and catching fireflies. One day, Raj finds his older brother, Ravi, acting strangely. Ravi’s once vibrant eyes are glazed over, and his playful laughter has been replaced by a vacant smile. Ravi hides mysterious, colorful candies that seem to spark immense energy, followed by long periods of withdrawal and irritability. 
 
 **Choice 1:**
 

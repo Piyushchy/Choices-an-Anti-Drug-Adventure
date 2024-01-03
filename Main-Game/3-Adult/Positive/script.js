@@ -19,6 +19,9 @@ const imageUrls = [
   "assets/1.jpg",
   "assets/2.jpg",
   "assets/3.jpg",
+  "assets/4.jpg",
+  "assets/5.jpg",
+  "assets/6.jpg",
   // Add more image URLs as needed
 ];
 
@@ -61,10 +64,13 @@ if (window.innerWidth > 760) {
 
 let currentStoryIndex = 0;
 const story = [
-  "Years have passed. Raj, now a teenager and 15 years old",
-  "his parents have been able to help Ravi overcome his addiction. Raj has learned from his brother's experience and is more aware of the dangers of drugs.",
-  "At school, a charismatic group promises acceptance and escape from everyday pressures.",
-  "They share a seemingly harmless powder that boosts confidence and makes the mundane exciting. Friends offers Raj the powder.",
+  "Raj is now in adult phase of his life and 25 Years old.",
+  "he is living a healthy life, after finishing his education he has landed a good job.",
+  "He has good family and friends.",
+  "but the Job where he currently works is very stressful.",
+  "It becomes very difficult for him to cope up with the stress. this stress has resulted in sleepless nights and anxiety.",
+  "One day while scrolling through social media he comes across a post.",
+  "about some stress relieving and sleep inducing syringes. It gains his attention.",
   "What should Raj do?",
   // Add more story lines
 ];
@@ -187,9 +193,9 @@ function toggleMenu() {
 
 function choiceMade(choice) {
   if (choice === 1) {
-    window.location.href = "/Main-Game/3-Adult/Negative/index.html";
+    window.location.href = "/Main-Game/4-Old/Negative/index.html";
   } else if (choice === 2) {
-    window.location.href = "/Main-Game/3-Adult/Positive/index.html";
+    window.location.href = "/Main-Game/4-Old/Positive/index.html";
   }
 }
 

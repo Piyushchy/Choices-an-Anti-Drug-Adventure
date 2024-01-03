@@ -155,3 +155,10 @@ function toggleMenu() {
     console.log("Hiding menu");
   }
 }
+
+function comingSoon(a) {
+  a.textContent = "Coming Soon!";
+  setTimeout(() => {
+    a.textContent = "Ai Counselling";
+  }, 1000);
+}
