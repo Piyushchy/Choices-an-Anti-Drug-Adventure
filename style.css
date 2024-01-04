@@ -336,7 +336,7 @@ main {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        border: 1px solid red;
+        /* border: 1px solid red; */
         padding: 20px 50px;
     }
 
@@ -528,6 +528,86 @@ main {
         
     }
 
+    @media screen and (max-width: 1000px) {
+        .nav-links {
+            display: none;
+        }
+
+        .hamburger-menu {
+            display: flex;
+        }
+
+        .tag-line {
+            width: 100%;
+        }
+
+        .description {
+            width: 50%;
+        }
+
+        .about-team h1{
+            font-size: 40px;
+        }
+
+        .team-membes{
+            width: 100%;
+            height: 100%;
+        }
+
+        .team-member{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .team-member:nth-child(even){
+            flex-direction: column;
+        }
+
+        .member-description{
+            width: 90%;
+            height: 100%;
+            align-items: center;
+            border-radius: 15px;
+        }
+
+        .member-description h3{
+            text-align: center;
+        }
+
+        .member-description h3 br{
+            display: block;
+        }
+
+        .member-socials a{
+            font-size: 20px;
+        }
+        
+
+        .member-image{
+            margin-bottom: 30px;
+        }
+
+        .member-image img{
+            height: 20%;
+        }
+
+        .footer{
+            text-align: center;
+            flex-direction: column;
+            height: 20vh;
+        }
+
+        .footer-message{
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        
+    }
+
     @media screen and (max-width: 620px){
 
         body{
@@ -656,6 +736,17 @@ main {
 
         .member-image img{
             height: 20%;
+        }
+
+        .footer{
+            text-align: center;
+            flex-direction: column;
+            height: 20vh;
+        }
+
+        .footer-message{
+            width: 100%;
+            margin-bottom: 10px;
         }
         
     }

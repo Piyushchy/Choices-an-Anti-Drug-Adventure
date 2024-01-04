@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
       description.style.left = 0;
       description.style.marginTop = "20rem";
       description.style.opacity = 1;
-      if (window.innerWidth > 850) {
+      if (window.innerWidth > 620) {
         gameRedirectContainer.style.right = "20px";
         gameRedirectContainer.style.bottom = "10px";
         gameRedirectContainer.style.height = "30%";
