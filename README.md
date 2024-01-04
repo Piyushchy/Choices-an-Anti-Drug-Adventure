@@ -2,6 +2,11 @@
 
 Welcome to "The Tangled Path," a compelling game that takes you through the life of Raj, a character facing crucial decisions at different stages. Navigate the challenges of childhood, teenagehood, adulthood, and old age, each choice shaping Raj's destiny and impacting the narrative.
 
+## Contributors
+
+[![Contributors](https://contrib.rocks/image?repo=spark-lucifer/Choices-an-Anti-Drug-Adventure)](https://github.com/spark-lucifer/Choices-an-Anti-Drug-Adventure/graphs/contributors)
+#### people who made this possible ❤
+
 ## Overview
 
 "The Tangled Path" is a choice-based adventure that explores the consequences of decisions related to drug use. Players guide Raj through critical moments in his life, witnessing the ripple effects of his choices on his relationships, career, and well-being.
@@ -60,9 +65,8 @@ Meet the talented individuals who contributed to the development of "The Tangled
 - **Education:** First-Year | Bachelor's in Computer Applications
 - **University:** SK Somaiya College, Somaiya Vidyavihar University
 - **Links:**
-  - [LinkedIn](https://www.linkedin.com/in/kunal-shah)
-  - [Portfolio](https://portfolio.example.com)
-  - [Personal Website](https://kunalshah.example.com)
+  - [LinkedIn](https://www.linkedin.com/in/kunalshah017)
+  - [Personal Website](https://kunalshah017.vercel.app)
 
 ## Piyush Chaudhary (Sudo su Team-Leader)
 
@@ -70,8 +74,7 @@ Meet the talented individuals who contributed to the development of "The Tangled
 - **Education:** First-Year | Bachelor's of Technology - Computer Engineering
 - **University:** KJ Somaiya College, Somaiya Vidyavihar University
 - **Links:**
-  - [LinkedIn](https://www.linkedin.com/in/piyush-chaudhary)
-  - [Portfolio](https://portfolio.example.com)
+  - [LinkedIn](https://www.linkedin.com/in/piyush-chaudhary-9b5999187/)
 
 ## Raunak Gupta
 
@@ -79,7 +82,7 @@ Meet the talented individuals who contributed to the development of "The Tangled
 - **Education:** First-Year | Bachelor's of Technology - Computer Engineering
 - **University:** KJ Somaiya College, Somaiya Vidyavihar University
 - **Links:**
-  - [LinkedIn](https://www.linkedin.com/in/raunak-gupta)
+  - [LinkedIn](https://www.linkedin.com/in/raunak-gupta-7b3503270/)
 
 ## Sarthak Wage
 
@@ -87,6 +90,6 @@ Meet the talented individuals who contributed to the development of "The Tangled
 - **Education:** First-Year | Bachelor's of Technology - Computer Engineering
 - **University:** KJ Somaiya College, Somaiya Vidyavihar University
 - **Links:**
-  - [LinkedIn](https://www.linkedin.com/in/sarthak-wage)
+  - [LinkedIn](https://www.linkedin.com/in/sarthak-wage-993b5a282/)
 
 

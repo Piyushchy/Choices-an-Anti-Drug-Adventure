@@ -331,6 +331,46 @@ main {
         transform: scale(1.2);
     }
 
+    .about-project{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid red;
+        padding: 20px 50px;
+    }
+
+    .about-project-description{
+        text-align: center;
+    }
+
+    .about-project-description ul{
+        list-style-type: none;
+        /* border: 1px solid red; */
+    }
+
+    .about-project h1{
+        font-family: 'Lora', serif;
+        font-size: 50px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .about-project-image{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 70%;
+        /* border: 1px solid red; */
+    }
+
+    .about-project-image img{
+        width: 50%;
+        object-position: 50% 50%;
+    }
+
     .game-redirect-container {
         display: flex;
         flex-direction: column;
@@ -441,6 +481,35 @@ main {
         0% { background-position: 0 0; }
         50% { background-position: 400% 0; }
         100% { background-position: 0 0; }
+    }
+
+    .footer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        width: 100%;
+        height: 10vh;
+        background-color: rgba(0, 0, 0);
+    }
+
+    .footer-message{
+        font-size: 20px;
+        font-weight: 700;
+        color: #fff;
+        width: 50%;
+    }
+
+    .footer-links a{
+        text-decoration: none;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0 10px;
+    }
+
+    .footer-links a:hover{
+        border-bottom: 2px solid #ffffff;
     }
 
   
