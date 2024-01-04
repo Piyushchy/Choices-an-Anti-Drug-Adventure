@@ -5,7 +5,7 @@ Welcome to "The Tangled Path," a compelling game that takes you through the life
 ## Contributors
 
 [![Contributors](https://contrib.rocks/image?repo=spark-lucifer/Choices-an-Anti-Drug-Adventure)](https://github.com/spark-lucifer/Choices-an-Anti-Drug-Adventure/graphs/contributors)
-#### people who made this possible ❤
+#### people and bots 🤖 who made this possible ❤
 
 ## Overview
 
