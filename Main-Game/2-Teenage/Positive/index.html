@@ -4,11 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 1: Chidhood</title>
+    <title>Chapter 2: Teenage</title>
+    <link rel="icon" href="/assets/tab-logo.png" type="image/png">
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
+    <div class="fullscreen-msg">
+        <h2>Game is best played in fullscreen mode <br>Click for Fullscreen mode</h2>
+        <div class="fullscreen-btn" onclick="toggleFullScreen()">
+            <label>Fullscreen</label>
+            <img src="/assets/Fit Screen.gif" alt="fullscreen-icon">
+        </div>
+        <div class="loading-bar"></div>
+    </div>
     <div class="menu-icon" onclick="toggleMenu()">
         <img src="/assets/menu-icon.png">
     </div>
@@ -26,19 +36,21 @@
             </div>
         </div>
         <div class="menu-footer">
-            <div class="team-logo">
-                <img src="/assets/Sudo.svg" alt="Sudo Logo">
-            </div>
-            <a href="https://github.com/spark-lucifer/Choices-an-Anti-Drug-Adventure">
+            <a href="/index.html" target="_blank">
+                <div class="team-logo">
+                    <img src="/assets/sudo.png" alt="Sudo Logo">
+                </div>
+            </a>
+            <a href="https://github.com/spark-lucifer/Choices-an-Anti-Drug-Adventure" target="_blank">
                 <div class="repo-link">
                     <p>Project Repository</p>
-                    <img src="/assets/github.svg" alt="Project Repository">
+                    <img src="/assets/github.png" alt="Project Repository">
                 </div>
             </a>
         </div>
     </div>
     <div class="intro">
-        <h1>Chapter 1: Childhood</h1>
+        <h1>Chapter 2: Teenage</h1>
         <div class="right-half blink"></div>
         <div class="instructions">
             <p>You can turn off the story teller from Menu on top right</p>
@@ -52,12 +64,10 @@
     <div class="gamecontainer">
         <img alt="" class="background">
         <div class="choice-box" id="choiceBox">
-            <button class="choice" id="choice1" onclick="choiceMade(1)">In Curosity. He secretly eats one of
-                Ravi's
-                candies.</button>
-            <button class="choice" id="choice2" onclick="choiceMade(2)">With Fear and Understanding. He tells
-                his
-                parents about Ravis's behavior.</button>
+            <button class="choice" id="choice1" onclick="choiceMade(1)">Desperately wanting to fit in, Raj accepts the
+                powder and joins the group.</button>
+            <button class="choice" id="choice2" onclick="choiceMade(2)">Resisting temptation, Raj avoids the group and
+                connects with doctors and counselors to address his underlying issues.</button>
         </div>
         <div class="dialogue-box" id="dialogueBox"></div>
     </div>

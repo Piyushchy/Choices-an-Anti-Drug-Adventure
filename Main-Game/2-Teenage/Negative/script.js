@@ -4,6 +4,9 @@ const rightHalf = document.querySelector(".right-half");
 var choiceBox = document.querySelector(".choice-box");
 var intro = document.querySelector(".intro");
 const menuItems = document.querySelector(".menu-items");
+const menuIcon = document.querySelector(".menu-icon img");
+const fullScreenMsg = document.querySelector(".fullscreen-msg");
+
 let sharedIsStoryTelling = localStorage.getItem("isStorytelling");
 
 console.log("sharedIsStoryTelling = " + sharedIsStoryTelling);
@@ -12,11 +15,11 @@ let isIntroShown = false;
 let isMenuShown = false;
 
 const imageUrls = [
-  "assets/0.png",
-  "assets/1.png",
-  "assets/2.png",
-  "assets/3.png",
-  "assets/4.png",
+  "assets/0.jpg",
+  "assets/1.jpg",
+  "assets/2.jpg",
+  "assets/3.jpg",
+  "assets/4.jpg",
   // Add more image URLs as needed
 ];
 
@@ -43,22 +46,27 @@ function preloadImages(urls) {
 preloadImages(imageUrls)
   .then(() => {
     console.log("All images are preloaded. Start your game here.");
-    if (window.innerWidth > 760) {
-      showIntro();
-      setTimeout(showRightHalf, 5000);
-    }
   })
   .catch((error) => {
     console.error("Image preload failed:", error);
   });
 
+if (window.innerWidth > 760) {
+  showIntro();
+  showFullScreenMsg();
+  setTimeout(hideFullScreenMsg, 7000);
+  setTimeout(showRightHalf, 5000);
+} else {
+  console.log("error: low width");
+}
+
 let currentStoryIndex = 0;
 const story = [
-  "Meet Raj, Raj is a bright and curious boy",
-  "His playful days revolve around building sandcastles and catching fireflies",
-  "One day... Raj finds his older brother, Ravi, acting strangely.",
-  "Ravi’s once vibrant eyes are glazed over, and his playful laughter has been replaced by a vacant smile. ",
-  "Ravi hides mysterious, colorful candies that seem to spark immense energy, followed by long periods of withdrawal and irritability.",
+  "Years have passed. Raj is now a teenager and 15 years old, struggles with the memory of his brother's battle.",
+  " He feels isolated and yearns for a sense of belonging.",
+  "At school, a charismatic group promises acceptance and escape from everyday pressures.",
+  "They share a seemingly harmless powder that boosts confidence and makes the mundane exciting.",
+  "as Raj has previously been exposed to drugs, he is more susceptible to addiction. and he is not able to resist the temptation.",
   "What should Raj do?",
   // Add more story lines
 ];
@@ -78,7 +86,8 @@ function handleScreenClick(event) {
     !isIntroShown &&
     !clickedElement.closest(".mobile-popup") &&
     !clickedElement.closest(".menu-icon") &&
-    !clickedElement.closest(".menu-items")
+    !clickedElement.closest(".menu-items") &&
+    !clickedElement.closest(".fullscreen-msg")
   ) {
     isIntroShown = true;
     hideIntro();
@@ -95,7 +104,8 @@ function handleScreenClick(event) {
     !clickedElement.closest(".choice-box") &&
     !clickedElement.closest(".mobile-popup") &&
     !clickedElement.closest(".menu-icon") &&
-    !clickedElement.closest(".menu-items")
+    !clickedElement.closest(".menu-items") &&
+    !clickedElement.closest(".fullscreen-msg")
   ) {
     if (isTyping) {
       // If typing is in progress, finish it instantly
@@ -137,7 +147,13 @@ function speak(text) {
   // Get the list of available voices
   const voices = synth.getVoices();
 
-  utterance.voice = voices[10]; // Set the voice
+  // Find a female voice with a pleasant tone (customize as needed)
+  const femaleVoice = voices.find(
+    (voice) => voice.name.includes("Female") && voice.lang.includes("en")
+  );
+
+  // Set the selected voice
+  utterance.voice = femaleVoice || voices[0]; // Use the first available voice if a suitable female voice is not found
 
   // Additional voice settings (customize as needed)
   utterance.rate = 1.0; // Speech rate (adjust as needed)
@@ -154,23 +170,28 @@ function stopSpeaking() {
 function hideMenu() {
   menuItems.style.display = "none";
   isMenuShown = false;
+  menuIcon.src = "/assets/menu-icon.png";
+}
+
+function showMenu() {
+  menuItems.style.display = "flex";
+  isMenuShown = true;
+  menuIcon.src = "/assets/cross-icon.png";
 }
 
 function toggleMenu() {
   if (!isMenuShown) {
-    menuItems.style.display = "flex";
-    isMenuShown = true;
+    showMenu();
   } else {
-    menuItems.style.display = "none";
-    isMenuShown = false;
+    hideMenu();
   }
 }
 
 function choiceMade(choice) {
   if (choice === 1) {
-    window.location.href = "/Main-Game/2-Teenage/Negative/index.html";
+    window.location.href = "/Main-Game/3-Adult/Negative/index.html";
   } else if (choice === 2) {
-    window.location.href = "/Main-Game/2-Teenage/Positive/index.html";
+    window.location.href = "/Main-Game/3-Adult/Positive/index.html";
   }
 }
 
@@ -191,14 +212,16 @@ function toggleStoryTeller() {
   const storyTeller = document.querySelector(".toggle-button-story");
   if (sharedIsStoryTelling) {
     sharedIsStoryTelling = false;
-    localStorage.setItem("isStorytelling", false);
+    localStorage.setItem("isStorytelling", sharedIsStoryTelling);
     console.log("Storytelling turned off");
+    console.log("sharedIsStoryTelling = " + sharedIsStoryTelling);
     storyTeller.textContent = "OFF";
     storyTeller.style.backgroundColor = "transparent";
   } else {
     sharedIsStoryTelling = true;
-    localStorage.setItem("isStorytelling", true);
+    localStorage.setItem("isStorytelling", sharedIsStoryTelling);
     console.log("Storytelling turned on");
+    console.log("sharedIsStoryTelling = " + sharedIsStoryTelling);
     storyTeller.textContent = "ON";
     storyTeller.style.backgroundColor = "green";
   }
@@ -210,6 +233,7 @@ function toggleFullScreen() {
     document.documentElement.requestFullscreen();
     fullscreen.textContent = "ON";
     fullscreen.style.backgroundColor = "green";
+    fullScreenMsg.style.display = "none";
   } else {
     if (document.exitFullscreen) {
       document.exitFullscreen();
@@ -259,8 +283,19 @@ function showIntro() {
   intro.style.visibility = "visible";
 }
 
+function showFullScreenMsg() {
+  fullScreenMsg.style.display = "block";
+  console.log("showFullScreenMsg");
+}
+
+function hideFullScreenMsg() {
+  const loadingBar = document.querySelector(".loading-bar");
+  loadingBar.style.width = "0%";
+  fullScreenMsg.style.display = "none";
+}
+
 function updateBackground() {
-  background.style.backgroundImage = `url('assets/${currentStoryIndex}.png')`;
+  background.style.backgroundImage = `url('assets/${currentStoryIndex}.jpg')`;
 }
 
 function updateDialogue() {

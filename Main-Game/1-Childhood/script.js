@@ -4,6 +4,8 @@ const rightHalf = document.querySelector(".right-half");
 var choiceBox = document.querySelector(".choice-box");
 var intro = document.querySelector(".intro");
 const menuItems = document.querySelector(".menu-items");
+const menuIcon = document.querySelector(".menu-icon img");
+const fullScreenMsg = document.querySelector(".fullscreen-msg");
 localStorage.setItem("isStorytelling", true);
 
 sharedIsStoryTelling = localStorage.getItem("isStorytelling");
@@ -47,6 +49,8 @@ preloadImages(imageUrls)
     console.log("All images are preloaded. Start your game here.");
     if (window.innerWidth > 760) {
       showIntro();
+      showFullScreenMsg();
+      setTimeout(hideFullScreenMsg, 7000);
       setTimeout(showRightHalf, 5000);
     }
   })
@@ -80,7 +84,8 @@ function handleScreenClick(event) {
     !isIntroShown &&
     !clickedElement.closest(".mobile-popup") &&
     !clickedElement.closest(".menu-icon") &&
-    !clickedElement.closest(".menu-items")
+    !clickedElement.closest(".menu-items") &&
+    !clickedElement.closest(".fullscreen-msg")
   ) {
     isIntroShown = true;
     hideIntro();
@@ -97,7 +102,8 @@ function handleScreenClick(event) {
     !clickedElement.closest(".choice-box") &&
     !clickedElement.closest(".mobile-popup") &&
     !clickedElement.closest(".menu-icon") &&
-    !clickedElement.closest(".menu-items")
+    !clickedElement.closest(".menu-items") &&
+    !clickedElement.closest(".fullscreen-msg")
   ) {
     if (isTyping) {
       // If typing is in progress, finish it instantly
@@ -140,7 +146,9 @@ function speak(text) {
   const voices = synth.getVoices();
 
   // Find a female voice with a pleasant tone (customize as needed)
-  const femaleVoice = voices.find(voice => voice.name.includes('Female') && voice.lang.includes('en'));
+  const femaleVoice = voices.find(
+    (voice) => voice.name.includes("Female") && voice.lang.includes("en")
+  );
 
   // Set the selected voice
   utterance.voice = femaleVoice || voices[0]; // Use the first available voice if a suitable female voice is not found
@@ -160,15 +168,20 @@ function stopSpeaking() {
 function hideMenu() {
   menuItems.style.display = "none";
   isMenuShown = false;
+  menuIcon.src = "/assets/menu-icon.png";
+}
+
+function showMenu() {
+  menuItems.style.display = "flex";
+  isMenuShown = true;
+  menuIcon.src = "/assets/cross-icon.png";
 }
 
 function toggleMenu() {
   if (!isMenuShown) {
-    menuItems.style.display = "flex";
-    isMenuShown = true;
+    showMenu();
   } else {
-    menuItems.style.display = "none";
-    isMenuShown = false;
+    hideMenu();
   }
 }
 
@@ -218,6 +231,7 @@ function toggleFullScreen() {
     document.documentElement.requestFullscreen();
     fullscreen.textContent = "ON";
     fullscreen.style.backgroundColor = "green";
+    fullScreenMsg.style.display = "none";
   } else {
     if (document.exitFullscreen) {
       document.exitFullscreen();
@@ -265,6 +279,16 @@ function hideRightHalf() {
 function showIntro() {
   intro.style.display = "flex";
   intro.style.visibility = "visible";
+}
+
+function showFullScreenMsg() {
+  fullScreenMsg.style.display = "block";
+}
+
+function hideFullScreenMsg() {
+  const loadingBar = document.querySelector(".loading-bar");
+  loadingBar.style.width = "0%";
+  fullScreenMsg.style.display = "none";
 }
 
 function updateBackground() {

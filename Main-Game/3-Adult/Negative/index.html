@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 3: Adult</title>
+    <link rel="icon" href="/assets/tab-logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="fullscreen-msg">
+        <h2>Game is best played in fullscreen mode <br>Click for Fullscreen mode</h2>
+        <div class="fullscreen-btn" onclick="toggleFullScreen()">
+            <label>Fullscreen</label>
+            <img src="/assets/Fit Screen.gif" alt="fullscreen-icon">
+        </div>
+        <div class="loading-bar"></div>
+    </div>
+    <div class="menu-icon" onclick="toggleMenu()">
+        <img src="/assets/menu-icon.png">
+    </div>
+    <div class="menu-items">
+        <div class="menu-item-container">
+            <div class="menu-item">Story Teller</div>
+            <div class="toggle-button-story" onclick="toggleStoryTeller()">
+                ON
+            </div>
+        </div>
+        <div class="menu-item-container">
+            <div class="menu-item">Full Screen</div>
+            <div class="toggle-button-fullscreen" onclick="toggleFullScreen()">
+                OFF
+            </div>
+        </div>
+        <div class="menu-footer">
+            <a href="/index.html" target="_blank">
+                <div class="team-logo">
+                    <img src="/assets/sudo.png" alt="Sudo Logo">
+                </div>
+            </a>
+            <a href="https://github.com/spark-lucifer/Choices-an-Anti-Drug-Adventure" target="_blank">
+                <div class="repo-link">
+                    <p>Project Repository</p>
+                    <img src="/assets/github.png" alt="Project Repository">
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="intro">
+        <h1>Chapter 3: Adult</h1>
+        <div class="right-half blink"></div>
+        <div class="instructions">
+            <p>You can turn off the story teller from Menu on top right</p>
+            <p>Click on right half of screen to continue</p>
+        </div>
+    </div>
+    <div class="mobile-popup">
+        <p>This Game is meant to be played in landscape mode please tilt your device and reload the page</p>
+        <img src="/assets/tilt.gif" alt="tilt-icon" class="tilt-icon">
+    </div>
+    <div class="gamecontainer">
+        <img alt="" class="background">
+        <div class="choice-box" id="choiceBox">
+            <button class="choice" id="choice1" onclick="choiceMade(1)">Succumbing to temptation, Raj discovers a new
+                syringes that is said to solve all problems.</button>
+            <button class="choice" id="choice2" onclick="choiceMade(2)">Recognizing the danger, Raj seeks professional
+                help to address his underlying stress and break free from the addiction.</button>
+        </div>
+        <div class="dialogue-box" id="dialogueBox"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
