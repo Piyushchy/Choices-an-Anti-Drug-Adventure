@@ -2,6 +2,11 @@
 
 Welcome to "The Tangled Path," a compelling game that takes you through the life of Raj, a character facing crucial decisions at different stages. Navigate the challenges of childhood, teenagehood, adulthood, and old age, each choice shaping Raj's destiny and impacting the narrative.
 
+## Contributors
+
+[![Contributors](https://contrib.rocks/image?repo=spark-lucifer/Choices-an-Anti-Drug-Adventure)](https://github.com/spark-lucifer/Choices-an-Anti-Drug-Adventure/graphs/contributors)
+#### people who made this possible ❤
+
 ## Overview
 
 "The Tangled Path" is a choice-based adventure that explores the consequences of decisions related to drug use. Players guide Raj through critical moments in his life, witnessing the ripple effects of his choices on his relationships, career, and well-being.
