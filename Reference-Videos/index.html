@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Diwali</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #000;
+            color: #FFC107;
+        }
+        .big-text {
+            font-size: 5rem;
+            padding-top: 15%;
+            animation: color-change 5s infinite;
+        }
+        @keyframes color-change {
+            0% { color: #FFC107; }
+            25% { color: #F44336; }
+            50% { color: #9C27B0; }
+            75% { color: #2196F3; }
+            100% { color: #4CAF50; }
+        }
+        #night {
+            background: radial-gradient(ellipse at bottom, #1A202C 0%, #1A202C 40%, #2D3748 50%, #2D3748 100%);
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .fireworks {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 200px;
+            background: repeating-linear-gradient(
+                180deg,
+                transparent,
+                transparent 5px,
+                #F44336 5px,
+                #F44336 10px
+            );
+            opacity: 0.5;
+            animation: blast 2s infinite;
+        }
+        @keyframes blast {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-200px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="night">
+        <h1 class="big-text">Happy Diwali</h1>
+        <div class="fireworks"></div>
+    </div>
+</body>
+</html>
