@@ -156,7 +156,16 @@ function downloadCertificate() {
 }
 
 async function uploadToImgur(imageData) {
-  const clientId = process.env.NEXT_PUBLIC_IMGUR_CLIENT_ID;
+  const clientId = process.env.GITHUB_ENV
+    ? process.env.GITHUB_ENV.IMGUR_CLIENT_ID
+    : null;
+
+  if (!clientId) {
+    console.error(
+      "IMGUR_CLIENT_ID not available in GitHub Actions environment."
+    );
+    return null;
+  }
 
   try {
     const response = await fetch("https://api.imgur.com/3/image", {
