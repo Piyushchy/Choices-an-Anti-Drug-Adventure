@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudo: Choices</title>
+    <link rel="icon" href="/assets/tab-logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <img src="/assets/sudo.png" alt="Logo" class="logo">
+
+        <ul class="nav-links">
+            <li><a href="https://sudo-choices.vercel.app/#homeSection">Home</a></li>
+            <li><a href="https://sudo-choices.vercel.app/#aboutTeam">About Team: <strong>Sudo</strong></a></li>
+            <li><a href="https://sudo-choices.vercel.app/#aboutProject">About Project</a></li>
+            <li><a onclick="comingSoon(this)" class="ai-button">Ai Counselling</a></li>
+        </ul>
+        <button class="hamburger-menu" onclick="toggleMenu()"></button>
+        <div class="menu-overlay">
+            <ul class="menu-overlay-items">
+                <li><a href="https://sudo-choices.vercel.app/#homeSection" onclick="hideMenu()">Home</a></li>
+                <li><a href="https://sudo-choices.vercel.app/#aboutTeam" onclick="hideMenu()">About Team:
+                        <strong>Sudo</strong></a></li>
+                <li><a href="https://sudo-choices.vercel.app/#aboutProject" onclick="hideMenu()">About Project</a></li>
+                <li><a onclick="comingSoon(this)" class="ai-button">Ai Counselling</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="certificate-form-container">
+            <h1>Get Your Anti-Drug Warrior Certificate</h1>
+
+            <div class="consent-check-container">
+                <input class="consent-check" id="consent-check" onclick="toggleConsent()" type="checkbox"></input>
+                <label for="consent-check">I agree to take Anti-Drug pledge & Become Anti-Drug Warrior</label>
+            </div>
+
+            <div class="name-input-container">
+                <label for="name-input">Please Enter your name :</label>
+                <input class="name-input" id="name-input" type="text" placeholder="First Name & Last Name"></input>
+            </div>
+            <button class="name-input-button" onclick="generateCertificate()">Get certificate</button>
+            <div id="result">
+            </div>
+            <img src="assets/certificate.png" alt="" class="temp-img">
+            <div class="share-container">
+                Share your certificate on Social Media
+                <div class="share-platforms">
+                    <img src="assets/download.png" alt="download" title="Download" style="filter: invert(1);"
+                        onclick="downloadCertificate()">
+                    <img src=" assets/whatsapp.png" alt="whatsapp" title="Whatsapp" onclick="whatsappShare()">
+                    <img src=" assets/instagram.png" alt="instagram" title="Instagram" onclick="instagramShare()">
+                    <img src="assets/twitter.png" alt="twitter" title="Twitter" onclick="twitterShare()">
+                </div>
+            </div>
+
+        </div>
+        <div class="description">
+            <h1>
+                Thank you for trying out our project. We hope you liked it.
+            </h1>
+            <h3>Take Anti-Drug pledge here at MyGov Website by Government of India</h3>
+            <div class="gov-redirect-container">
+                <img src="https://pledge.mygov.in/fightagainstdrugabuse/assets/images/mygov.png" alt="gov-logo">
+                <a href="https://pledge.mygov.in/fightagainstdrugabuse/" target="_blank" class="ai-button">
+                    <div>Take Pledge</div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

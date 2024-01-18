@@ -80,7 +80,7 @@ function handleScreenClick(event) {
   const clickedElement = event.target;
 
   if (clickedElement.closest(".outro")) {
-    window.location.href = "/index.html";
+    window.location.href = "/Pledge-Ceartificate/index.html";
   }
 
   if (currentStoryIndex === 3) {
