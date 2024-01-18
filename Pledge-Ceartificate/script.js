@@ -156,7 +156,7 @@ function downloadCertificate() {
 }
 
 async function uploadToImgur(imageData) {
-  const clientId = process.env.IMGUR_CLIENT_ID;
+  const clientId = process.env.NEXT_PUBLIC_IMGUR_CLIENT_ID;
 
   try {
     const response = await fetch("https://api.imgur.com/3/image", {
