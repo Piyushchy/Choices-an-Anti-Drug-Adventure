@@ -137,6 +137,45 @@ main{
     height: 100vh;
 }
 
+.thankyou{
+    width: 100%;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #1c1b1b;
+    background-image: url(assets/confetti.png);
+    background-size: cover;
+    background-position: center;
+    background-size: 70% ;
+    background-position-y: 100%;
+    padding: 50px 0;
+
+    animation: confetti 10s ease-in-out infinite;
+}
+
+@keyframes confetti{
+    0%{
+        background-position-y: 100%;
+    }
+
+    100%{
+        background-position-y: 0%;
+    }
+}
+
+
+.thankyou h1{
+    font-family: 'popins', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    background-color: #1c1b1bb7;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+
 .certificate-form-container{
     width: 100%;
     display: flex;
@@ -298,13 +337,11 @@ main{
     align-items: center;
     flex-direction: column;
     text-align: center;
-}
-
-.description h1{
-    font-family: 'popins', sans-serif;
-    font-size: 30px;
-    font-weight: 700;
-    margin-bottom: 20px;
+    background-color: #1c1b1b;
+    border-radius: 20px 20px 0 0;
+    filter: drop-shadow(0px -5px 5px #0edf23);
+    padding: 20px 0;
+    gap: 20px;
 }
 
 .description h3{
@@ -319,7 +356,8 @@ main{
     justify-content: center;
     align-items: center;
     width: 100%;
-    gap: 50px;
+    gap: 100px;
+    /* border: 1px solid #0edf23; */
 }
 
 .gov-redirect-container a{
@@ -354,6 +392,35 @@ main{
     transform: scale(1.1);
 }
 
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(0, 0, 0);
+}
+
+.footer-message{
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    width: 50%;
+}
+
+.footer-links a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 10px;
+}
+
+.footer-links a:hover{
+    border-bottom: 2px solid #ffffff;
+}
+
 @media screen and (max-width: 1150px) {
     .nav-links {
         width: 60%;
@@ -383,6 +450,92 @@ main{
 
     .hamburger-menu {
         display: flex;
+    }
+
+    .thankyou{
+        background-size: 100% ;
+        background-position-y: 100%;
+        padding: 20px 0;
+    }
+
+    .thankyou h1{
+        font-size: 20px;
+        padding: 5px 10px;
+    }
+
+  
+
+    .certificate-form-container h1{
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    .consent-check-container{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .consent-check-container input{
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+    }
+
+    .consent-check-container label{
+        font-size: 15px;
+        width: 100%;
+        /* border: 1px solid #fff; */
+        text-align: left;
+    }
+
+    .name-input-container{
+        margin-top: 20px;
+        font-weight: 500;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .name-input-container input{
+        width: 100%;
+        font-size: 15px;
+    }
+
+    .share-container{
+        margin-top: 20px;
+        width: 80%;
+    }
+
+    .description h3{
+        width: 80%;
+        font-size: 15px;
+    }
+
+    .gov-redirect-container{
+        width: 80%;
+        gap: 50px;
+    }
+
+    .gov-redirect-container img{
+        width: 110px;
+    }
+
+    .gov-redirect-container a{
+        font-size: 15px;
+        width: 100%;
+    }
+
+    .footer{
+        height: 15vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
     }
 
 }

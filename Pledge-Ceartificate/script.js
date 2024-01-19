@@ -1,3 +1,7 @@
+var globalImgUrl = "";
+
+var certificateUrl = "";
+var formatedCertificateurl = "";
 //  Nav bar Scroll
 const nav = document.querySelector("nav");
 
@@ -106,6 +110,10 @@ function generateCertificate() {
     ctx.fillText(name, canvas.width / 2, 735);
 
     const imgURL = canvas.toDataURL("image/png");
+    globalImgUrl = imgURL;
+    setTimeout(() => {
+      FormtCeartificateURL();
+    }, 3000);
 
     const certificateImg = new Image();
     certificateImg.src = imgURL;
@@ -128,44 +136,8 @@ function generateCertificate() {
   shareContainer.style.display = "flex";
 }
 
-function downloadCertificate() {
-  const resultDiv = document.getElementById("result");
-  const certificateImg = resultDiv.querySelector("img");
-
-  if (!certificateImg) {
-    console.error("Certificate image not found");
-    return;
-  }
-
-  const canvas = document.createElement("canvas");
-  canvas.width = certificateImg.width;
-  canvas.height = certificateImg.height;
-
-  const ctx = canvas.getContext("2d");
-  ctx.drawImage(certificateImg, 0, 0);
-
-  const downloadLink = document.createElement("a");
-  downloadLink.href = canvas.toDataURL("image/png");
-  downloadLink.download = "Certificate.png";
-  downloadLink.style.display = "none";
-  document.body.appendChild(downloadLink);
-
-  downloadLink.click();
-
-  document.body.removeChild(downloadLink);
-}
-
 async function uploadToImgur(imageData) {
-  const clientId = process.env.GITHUB_ENV
-    ? process.env.GITHUB_ENV.IMGUR_CLIENT_ID
-    : null;
-
-  if (!clientId) {
-    console.error(
-      "IMGUR_CLIENT_ID not available in GitHub Actions environment."
-    );
-    return null;
-  }
+  const clientId = "d0e21d10d6a0ef5";
 
   try {
     const response = await fetch("https://api.imgur.com/3/image", {
@@ -184,6 +156,7 @@ async function uploadToImgur(imageData) {
     if (data.success) {
       const imageUrl = data.data.link;
       console.log("Image uploaded to Imgur:", imageUrl);
+      certificateUrl = imageUrl;
       return imageUrl;
     } else {
       console.error("Imgur upload failed:", data.data.error);
@@ -192,5 +165,51 @@ async function uploadToImgur(imageData) {
   } catch (error) {
     console.error("Error uploading to Imgur:", error.message);
     return null;
+  }
+}
+
+function downloadCertificate() {
+  const link = document.createElement("a");
+  link.download = "certificate.png";
+  link.href = globalImgUrl;
+  link.click();
+}
+
+function FormtCeartificateURL() {
+  var temp = certificateUrl;
+  // remove last 4 characters from the string
+  temp = temp.slice(0, -4);
+  // extract last 7 characters from the string
+  temp = temp.slice(-7);
+  console.log("temp: ", temp);
+
+  formatedCertificateurl = "https://imgur.com/" + temp;
+
+  console.log("formatedCertificateurl: ", formatedCertificateurl);
+}
+
+function whatsappShare() {
+  // Check if the formatted Imgur URL is available
+  if (formatedCertificateurl) {
+    const url = `https://api.whatsapp.com/send?text=Just Became a part of the Anti Drug Movement here is my certificate 📜: ${formatedCertificateurl}%0AExperience the project and stand against drug addiction on: sudo-choices.vercel.app`;
+    window.open(url, "_blank");
+  } else {
+    // If the formatted Imgur URL is not available, use the project link without the certificate
+    const url = `https://api.whatsapp.com/send?text=Experience the project and stand against drug addiction on: sudo-choices.vercel.app`;
+    window.open(url, "_blank");
+  }
+}
+
+function instagramShare() {
+  // create a post on instagram
+
+  // Check if the formatted Imgur URL is available
+  if (formatedCertificateurl) {
+    const url = `https://www.instagram.com/create/details/?source=instagram_web_create_flow&image_url=${formatedCertificateurl}&caption=Just Became a part of the Anti Drug Movement here is my certificate 📜%0AExperience the project and stand against drug addiction on: sudo-choices.vercel.app`;
+    window.open(url, "_blank");
+  } else {
+    // If the formatted Imgur URL is not available, use the project link without the certificate
+    const url = `https://www.instagram.com/create/details/?source=instagram_web_create_flow&caption=Experience the project and stand against drug addiction on: sudo-choices.vercel.app`;
+    window.open(url, "_blank");
   }
 }
