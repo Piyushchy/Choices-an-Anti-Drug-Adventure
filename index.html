@@ -14,21 +14,49 @@
 
 <body>
     <nav>
-        <img src="/assets/sudo.png" alt="Logo" class="logo">
-
-        <ul class="nav-links">
-            <li><a href="#homeSection">Home</a></li>
-            <li><a href="#aboutTeam">About Team: <strong>Sudo</strong></a></li>
-            <li><a href="#aboutProject">About Project</a></li>
-            <li><a onclick="comingSoon(this)" class="ai-button">Ai Counselling</a></li>
+        <img src="/assets/sudo.png" alt="Logo" class="logo"
+            onclick="window.location='https://sudo-choices.vercel.app/#homeSection'">
+        <ul class="nav-links-container">
+            <li><a href="https://sudo-choices.vercel.app/#homeSection" class="nav-link">Home</a></li>
+            <li><a href="https://sudo-choices.vercel.app/#aboutTeam" class="nav-link">About Team:
+                    <strong>Sudo</strong></a></li>
+            <li><a href="https://sudo-choices.vercel.app/#aboutProject" class="nav-link">About Project</a></li>
+            <li>
+                <div class="dropdown" onclick="dropDown()">
+                    <a class="nav-link mobile-more">More</a>
+                    <div id="moreDropDown" class="dropdown-content">
+                        <a href="https://github.com/spark-lucifer/web-scraping-2" class="nav-link">Anti-Drug Forum</a>
+                        <a href="/Pledge-Ceartificate/index.html" class="nav-link">Take Pledge</a>
+                        <a href="/Project-Feedback/index.html" class="nav-link">Project Feedback</a>
+                    </div>
+                    <img src="/assets/dropdown-icon.png" alt="dropdown">
+                </div>
+            </li>
+            <li><a href="/Main-Game/1-Childhood/index.html" class="play-game nav-link">Play Game</a></li>
         </ul>
         <button class="hamburger-menu" onclick="toggleMenu()"></button>
         <div class="menu-overlay">
             <ul class="menu-overlay-items">
-                <li><a href="#homeSection" onclick="hideMenu()">Home</a></li>
-                <li><a href="#aboutTeam" onclick="hideMenu()">About Team: <strong>Sudo</strong></a></li>
-                <li><a href="#aboutProject" onclick="hideMenu()">About Project</a></li>
-                <li><a onclick="comingSoon(this)" class="ai-button">Ai Counselling</a></li>
+                <li><a href="https://sudo-choices.vercel.app/#homeSection" onclick="hideMenu()"
+                        class="menu-overlay-link">Home</a></li>
+                <li><a href="https://sudo-choices.vercel.app/#aboutTeam" onclick="hideMenu()"
+                        class="menu-overlay-link">About Team:
+                        <strong>Sudo</strong></a></li>
+                <li><a href="https://sudo-choices.vercel.app/#aboutProject" onclick="hideMenu()"
+                        class="menu-overlay-link">About Project</a></li>
+                <li onclick="dropDown()">
+                    <div class="mobile-dropdown">
+                        <label class="menu-overlay-link">More</label>
+                        <img src="/assets/dropdown-icon.png" alt="dropdown">
+                        <div id="moreDropDown" class="dropdown-content mobile-dropdown-content">
+                            <a href="https://github.com/spark-lucifer/web-scraping-2" class="nav-link">Anti-Drug
+                                Forum</a>
+                            <a href="/Pledge-Ceartificate/index.html" class="nav-link">Take Pledge</a>
+                            <a href="/Project-Feedback/index.html" class="nav-link">Project Feedback</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="/Main-Game/1-Childhood/index.html" class="play-game menu-overlay-link">Play Game</a></li>
             </ul>
         </div>
     </nav>
@@ -90,7 +118,7 @@
                     </div>
                 </div>
             </div>
-            <div class=" team-member">
+            <div class="team-member">
                 <div class="member-image">
                     <img src="https://media.licdn.com/dms/image/D4E03AQFDvyJUinwVWg/profile-displayphoto-shrink_200_200/0/1686121558557?e=1709769600&v=beta&t=dH55upHpNmUQPwJcT5ijWPn3IUGV8A8E1YHK6uANJVE"
                         alt="Team Member">
@@ -128,7 +156,7 @@
             </div>
             <div class="team-member">
                 <div class="member-image">
-                    <img src="https://media.licdn.com/dms/image/D5635AQGXW0U7XhrOLA/profile-framedphoto-shrink_200_200/0/1660002772504?e=1704672000&v=beta&t=e1_WXISy3lg3IX0wrnoj8H3nXyFN0Wa8NICw1TpoYzQ"
+                    <img src="https://media.licdn.com/dms/image/D4D03AQEs5WFjUM-owA/profile-displayphoto-shrink_200_200/0/1704293297796?e=1710979200&v=beta&t=BwZNd7ul9jOEj8Qo5DTphwlph2TgqZM2BeQ9AwdDRgI"
                         alt="Team Member">
                 </div>
                 <div class="member-description odd">
@@ -169,9 +197,10 @@
             </p>
         </div>
         <div class="about-project-image">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/hTmDJXYRnEk?si=v3CdsknmB1Qw5rsC"
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/hTmDJXYRnEk?si=v3CdsknmB1Qw5rsC&rel=0"
                 title="YouTube video player" frameborder="0"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
         </div>
     </div>
 

@@ -19,22 +19,49 @@
 
 <body>
     <nav>
-        <img src="/assets/sudo.png" alt="Logo" class="logo">
-
-        <ul class="nav-links">
-            <li><a href="https://sudo-choices.vercel.app/#homeSection">Home</a></li>
-            <li><a href="https://sudo-choices.vercel.app/#aboutTeam">About Team: <strong>Sudo</strong></a></li>
-            <li><a href="https://sudo-choices.vercel.app/#aboutProject">About Project</a></li>
-            <li><a onclick="comingSoon(this)" class="ai-button">Ai Counselling</a></li>
+        <img src="/assets/sudo.png" alt="Logo" class="logo"
+            onclick="window.location='https://sudo-choices.vercel.app/#homeSection'">
+        <ul class="nav-links-container">
+            <li><a href="https://sudo-choices.vercel.app/#homeSection" class="nav-link">Home</a></li>
+            <li><a href="https://sudo-choices.vercel.app/#aboutTeam" class="nav-link">About Team:
+                    <strong>Sudo</strong></a></li>
+            <li><a href="https://sudo-choices.vercel.app/#aboutProject" class="nav-link">About Project</a></li>
+            <li>
+                <div class="dropdown" onclick="dropDown()">
+                    <a class="nav-link mobile-more">More</a>
+                    <div id="moreDropDown" class="dropdown-content">
+                        <a href="https://github.com/spark-lucifer/web-scraping-2" class="nav-link">Anti-Drug Forum</a>
+                        <a href="/Pledge-Ceartificate/index.html" class="nav-link">Take Pledge</a>
+                        <a href="/Project-Feedback/index.html" class="nav-link">Project Feedback</a>
+                    </div>
+                    <img src="/assets/dropdown-icon.png" alt="dropdown">
+                </div>
+            </li>
+            <li><a href="/Main-Game/1-Childhood/index.html" class="play-game nav-link">Play Game</a></li>
         </ul>
         <button class="hamburger-menu" onclick="toggleMenu()"></button>
         <div class="menu-overlay">
             <ul class="menu-overlay-items">
-                <li><a href="https://sudo-choices.vercel.app/#homeSection" onclick="hideMenu()">Home</a></li>
-                <li><a href="https://sudo-choices.vercel.app/#aboutTeam" onclick="hideMenu()">About Team:
+                <li><a href="https://sudo-choices.vercel.app/#homeSection" onclick="hideMenu()"
+                        class="menu-overlay-link">Home</a></li>
+                <li><a href="https://sudo-choices.vercel.app/#aboutTeam" onclick="hideMenu()"
+                        class="menu-overlay-link">About Team:
                         <strong>Sudo</strong></a></li>
-                <li><a href="https://sudo-choices.vercel.app/#aboutProject" onclick="hideMenu()">About Project</a></li>
-                <li><a onclick="comingSoon(this)" class="ai-button">Ai Counselling</a></li>
+                <li><a href="https://sudo-choices.vercel.app/#aboutProject" onclick="hideMenu()"
+                        class="menu-overlay-link">About Project</a></li>
+                <li onclick="dropDown()">
+                    <div class="mobile-dropdown">
+                        <label class="menu-overlay-link">More</label>
+                        <img src="/assets/dropdown-icon.png" alt="dropdown">
+                        <div id="moreDropDown" class="dropdown-content mobile-dropdown-content">
+                            <a href="https://github.com/spark-lucifer/web-scraping-2" class="nav-link">Anti-Drug
+                                Forum</a>
+                            <a href="/Pledge-Ceartificate/index.html" class="nav-link">Take Pledge</a>
+                            <a href="/Project-Feedback/index.html" class="nav-link">Project Feedback</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="/Main-Game/1-Childhood/index.html" class="play-game menu-overlay-link">Play Game</a></li>
             </ul>
         </div>
     </nav>
@@ -58,7 +85,7 @@
                 <label for="name-input">Please Enter your name :</label>
                 <input class="name-input" id="name-input" type="text" placeholder="First Name & Last Name"></input>
             </div>
-            <button class="name-input-button" onclick="generateCertificate()">Get certificate</button>
+            <button class="name-input-button" onclick="generateCertificate()">Get Certificate</button>
             <div id="result">
             </div>
             <img src="assets/certificate.png" alt="" class="temp-img">
