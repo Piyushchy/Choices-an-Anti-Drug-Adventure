@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Feedback</title>
+    <link rel="icon" href="/assets/tab-logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <img src="/assets/sudo.png" alt="Logo" class="logo"
+            onclick="window.location='https://sudo-choices.vercel.app/#homeSection'">
+        <ul class="nav-links-container">
+            <li><a href="https://sudo-choices.vercel.app/#homeSection" class="nav-link">Home</a></li>
+            <li><a href="https://sudo-choices.vercel.app/#aboutTeam" class="nav-link">About Team:
+                    <strong>Sudo</strong></a></li>
+            <li><a href="https://sudo-choices.vercel.app/#aboutProject" class="nav-link">About Project</a></li>
+            <li>
+                <div class="dropdown" onclick="dropDown()">
+                    <a class="nav-link mobile-more">More</a>
+                    <div id="moreDropDown" class="dropdown-content">
+                        <a href="https://github.com/spark-lucifer/web-scraping-2" class="nav-link">Anti-Drug Forum:
+                            Project</a>
+                        <a href="/Pledge-Ceartificate/index.html" class="nav-link">Take Pledge</a>
+                        <a href="/Project-Feedback/index.html" class="nav-link">Project Feedback</a>
+                    </div>
+                    <img src="/assets/dropdown-icon.png" alt="dropdown">
+                </div>
+            </li>
+            <li><a href="/Main-Game/1-Childhood/index.html" class="play-game nav-link">Play Game</a></li>
+        </ul>
+        <button class="hamburger-menu" onclick="toggleMenu()"></button>
+        <div class="menu-overlay">
+            <ul class="menu-overlay-items">
+                <li><a href="https://sudo-choices.vercel.app/#homeSection" onclick="hideMenu()"
+                        class="menu-overlay-link">Home</a></li>
+                <li><a href="https://sudo-choices.vercel.app/#aboutTeam" onclick="hideMenu()"
+                        class="menu-overlay-link">About Team:
+                        <strong>Sudo</strong></a></li>
+                <li><a href="https://sudo-choices.vercel.app/#aboutProject" onclick="hideMenu()"
+                        class="menu-overlay-link">About Project</a></li>
+                <li onclick="dropDown()">
+                    <div class="mobile-dropdown">
+                        <label class="menu-overlay-link">More</label>
+                        <img src="/assets/dropdown-icon.png" alt="dropdown">
+                        <div id="moreDropDown" class="dropdown-content mobile-dropdown-content">
+                            <a href="https://github.com/spark-lucifer/web-scraping-2" class="nav-link">Anti-Drug
+                                Forum</a>
+                            <a href="/Pledge-Ceartificate/index.html" class="nav-link">Take Pledge</a>
+                            <a href="/Project-Feedback/index.html" class="nav-link">Project Feedback</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="/Main-Game/1-Childhood/index.html" class="play-game menu-overlay-link">Play Game</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="fullscreen-msg">
+            <h2>Thank you for your Feedback</h2>
+            <h3>will surely upgrade as per your rating & suggestions </h3>
+            <div class="fullscreen-btn" onclick="window.location.href='/index.html'">
+                <label>Sudo> Home</label>
+            </div>
+            <div class="loading-bar"></div>
+        </div>
+        <div class="feedback-container">
+            <h1>Project Feedback</h1>
+            <div class="form-container">
+                <form method="post" action="" name="contact-form" class="form" id="contact-form">
+                    <label>Your Full Name: </label>
+                    <input type="text" name="Your-Name" placeholder="Full Name" class="text-input">
+
+                    <div class="rating-container" id="Rate-Gameplay">Rate Gameplay & Storyline:
+                        <div class="rating">
+                            <label>
+                                <input type="radio" name="stars1" value="1" />
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars1" value="2" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars1" value="3" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars1" value="4" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars1" value="5" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="rating-container" id="Rate-Design">Rate The UI Design:
+                        <div class="rating">
+                            <label>
+                                <input type="radio" name="stars2" value="1" />
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars2" value="2" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars2" value="3" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars2" value="4" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars2" value="5" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="rating-container" id="Rate-AI">Rate AI Bot available on Website
+                        <div class="rating">
+                            <label>
+                                <input type="radio" name="stars3" value="1" />
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars3" value="2" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars3" value="3" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars3" value="4" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars3" value="5" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="rating-container" id="Rate-Help">How Helpful was the Website for you:
+                        <div class="rating">
+                            <label>
+                                <input type="radio" name="stars4" value="1" />
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars4" value="2" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars4" value="3" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars4" value="4" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="stars4" value="5" />
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                                <span class="icon">★</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="message-container">
+                        <label>Any More Suggestions or Improvements: </label>
+                        <textarea name="Suggestions" placeholder="Suggestions" class="text-input message"
+                            rows="7"></textarea>
+                    </div>
+                    <input type="submit" value="Submit" id="submit">
+                </form>
+            </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
