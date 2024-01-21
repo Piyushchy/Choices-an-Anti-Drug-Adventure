@@ -153,6 +153,13 @@ function toggleMenu() {
   } else {
     hideMenu();
     console.log("Hiding menu");
+    const dropdownContent = document.querySelector(".dropdown-content");
+    const dropdownIcon = document.querySelector(".dropdown img");
+    const mobileDropdownContent = document.querySelector(
+      ".mobile-dropdown-content"
+    );
+    isDropdownOpen = true;
+    dropDown();
   }
 }
 

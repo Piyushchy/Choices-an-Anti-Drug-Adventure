@@ -79,6 +79,8 @@ function toggleMenu() {
   } else {
     hideMenu();
     console.log("Hiding menu");
+    isDropdownOpen = true;
+    dropDown();
   }
 }
 
