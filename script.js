@@ -162,3 +162,38 @@ function comingSoon(a) {
     a.textContent = "Ai Counselling";
   }, 1000);
 }
+
+// dropdown
+var isDropdownOpen = false;
+function dropDown() {
+  const dropdownContent = document.querySelector(".dropdown-content");
+  const dropdownIcon = document.querySelector(".dropdown img");
+  const mobileDropdownContent = document.querySelector(
+    ".mobile-dropdown-content"
+  );
+  const mobileDropdownIcon = document.querySelector(".mobile-dropdown img");
+
+  if (!isDropdownOpen) {
+    dropdownContent.style.display = "flex";
+    dropdownIcon.style.transform = "rotate(180deg)";
+    mobileDropdownContent.style.display = "flex";
+    mobileDropdownIcon.style.transform = "rotate(180deg)";
+    console.log("showing dropdown");
+    isDropdownOpen = true;
+    setTimeout(() => {
+      // if mouse is not hovering over the dropdown hide the dropdown
+      dropdownContent.addEventListener("mouseleave", () => {
+        dropdownContent.style.display = "none";
+        dropdownIcon.style.transform = "rotate(0deg)";
+        isDropdownOpen = false;
+      });
+    }, 1000);
+  } else {
+    dropdownContent.style.display = "none";
+    dropdownIcon.style.transform = "rotate(0deg)";
+    mobileDropdownContent.style.display = "none";
+    mobileDropdownIcon.style.transform = "rotate(0deg)";
+    console.log("hiding dropdown");
+    isDropdownOpen = false;
+  }
+}
