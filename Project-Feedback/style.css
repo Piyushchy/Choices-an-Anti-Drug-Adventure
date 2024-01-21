@@ -152,7 +152,7 @@ text-align: center;
     top: 70px;
     right: 0;
     height: 50vh;
-    width: 200px;
+    width: 400px;
     background-color: rgba(27, 25, 25, 0.788);
     z-index: 100;
     right: -100%;
@@ -196,6 +196,7 @@ main{
     min-height: 100vh;
     text-align: center;
     /* border: 1px solid red; */
+    padding-bottom: 7vh;
 }
 
 .form-container{
@@ -366,6 +367,36 @@ main{
 }
 
 
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    height: 10vh;
+    background-color: rgba(0, 0, 0);
+}
+
+.footer-message{
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    width: 50%;
+}
+
+.footer-links a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0 10px;
+}
+
+.footer-links a:hover{
+    border-bottom: 2px solid #ffffff;
+}
+
+
 @media screen and (max-width: 1150px) {
     .nav-links-container {
         width: 60%;
@@ -440,6 +471,17 @@ main{
 
 }
 
+@media screen and (max-width: 620px) {
+    .footer{
+        height: 15vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+}
+
 
 
 
@@ -451,6 +493,7 @@ main{
     height: 50px;
     line-height: 50px;
     font-size: 50px;
+    -webkit-tap-highlight-color: transparent;
   }
   
   .rating label {
@@ -504,6 +547,7 @@ main{
   .rating:not(:hover) label input:checked ~ .icon,
   .rating:hover label:hover input ~ .icon {
     color: #0edf23;
+    filter: drop-shadow(0 0 0.75rem #0edf23);
   }
   
   .rating label input:focus:not(:checked) ~ .icon:last-child {
