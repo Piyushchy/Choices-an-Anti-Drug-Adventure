@@ -91,9 +91,8 @@
 
     <main>
         <script>(function () { var js, fs, d = document, id = "tars-widget-script", b = "https://tars-file-upload.s3.amazonaws.com/bulb/"; if (!d.getElementById(id)) { js = d.createElement("script"); js.id = id; js.type = "text/javascript"; js.src = b + "js/widget.js"; fs = d.getElementsByTagName("script")[0]; fs.parentNode.insertBefore(js, fs) } })(); window.tarsSettings = { "convid": "LO59ww", "href": "https://chatbot.hellotars.com/conv/LO59ww" };</script>
-        <div class="thankyou">
+        <div class="head-message">
             <h1>
-                Thank you for trying out our project. We hope you liked it.
             </h1>
         </div>
         <div class="certificate-form-container">
@@ -106,7 +105,8 @@
 
             <div class="name-input-container">
                 <label for="name-input">Please Enter your name :</label>
-                <input class="name-input" id="name-input" type="text" placeholder="First Name & Last Name"></input>
+                <input class="name-input" id="name-input" type="text" placeholder="First Name & Last Name"
+                    name="name-input"></input>
             </div>
             <button class="name-input-button" onclick="generateCertificate()">Get Certificate</button>
             <div id="result">
@@ -160,6 +160,7 @@
 
 
     <script src="script.js"></script>
+    <script src="post-data.js"></script>
 </body>
 
 </html>

@@ -189,6 +189,9 @@ function choiceMade(choice) {
   if (choice === 1) {
     window.location.href = "/Main-Game/3-Adult/Negative/index.html";
   } else if (choice === 2) {
+    var currentScore = parseInt(sessionStorage.getItem("userScore"));
+    var newScore = currentScore + 1;
+    sessionStorage.setItem("userScore", newScore);
     window.location.href = "/Main-Game/3-Adult/Positive/index.html";
   }
 }

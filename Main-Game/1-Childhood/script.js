@@ -7,6 +7,8 @@ const menuItems = document.querySelector(".menu-items");
 const menuIcon = document.querySelector(".menu-icon img");
 const fullScreenMsg = document.querySelector(".fullscreen-msg");
 localStorage.setItem("isStorytelling", true);
+var userScore = 0;
+sessionStorage.setItem("userScore", userScore);
 
 sharedIsStoryTelling = localStorage.getItem("isStorytelling");
 
@@ -189,6 +191,9 @@ function choiceMade(choice) {
   if (choice === 1) {
     window.location.href = "/Main-Game/2-Teenage/Negative/index.html";
   } else if (choice === 2) {
+    var currentScore = parseInt(sessionStorage.getItem("userScore"));
+    var newScore = currentScore + 1;
+    sessionStorage.setItem("userScore", newScore);
     window.location.href = "/Main-Game/2-Teenage/Positive/index.html";
   }
 }
