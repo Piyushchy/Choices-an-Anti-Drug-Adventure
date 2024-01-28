@@ -1,7 +1,24 @@
 var globalImgUrl = "";
 
+let isBadEnding = sessionStorage.getItem("BadEnding");
+var userScore = parseInt(sessionStorage.getItem("userScore"));
+
 var certificateUrl = "";
 var formatedCertificateurl = "";
+
+const headMessage = document.querySelector(".head-message h1");
+if (isNaN(userScore)) {
+  headMessage.textContent = "Welcome, Generate your certificate here";
+} else if (userScore == 3) {
+  headMessage.textContent =
+    "Great, you chose the right path lets become a Anti Drug Warrior";
+} else if (userScore < 3 && userScore >= 0 && !isBadEnding) {
+  headMessage.textContent = "Good, some choices were wrong but you improved";
+} else if (userScore < 3 && userScore >= 0 && isBadEnding) {
+  headMessage.textContent =
+    "You chose the wrong path, but still you can improve";
+}
+
 //  Nav bar Scroll
 const nav = document.querySelector("nav");
 
@@ -148,14 +165,9 @@ function generateCertificate() {
 
     const imgURL = canvas.toDataURL("image/png");
     globalImgUrl = imgURL;
-    setTimeout(() => {
-      FormtCeartificateURL();
-    }, 3000);
 
     const certificateImg = new Image();
     certificateImg.src = imgURL;
-    resultDiv.innerHTML = "";
-    resultDiv.appendChild(certificateImg);
 
     const uploadedImageUrl = await uploadToImgur(imgURL);
 
@@ -164,6 +176,8 @@ function generateCertificate() {
       certificateImg.src = uploadedImageUrl;
       resultDiv.innerHTML = "";
       resultDiv.appendChild(certificateImg);
+      FormtCeartificateURL();
+      GoogleSheetPost();
     } else {
       console.error("Failed to upload image to Imgur");
     }
@@ -223,6 +237,7 @@ function FormtCeartificateURL() {
   formatedCertificateurl = "https://imgur.com/" + temp;
 
   console.log("formatedCertificateurl: ", formatedCertificateurl);
+  sessionStorage.setItem("formatedCertificateurl", formatedCertificateurl);
 }
 
 function whatsappShare() {
@@ -247,6 +262,18 @@ function instagramShare() {
   } else {
     // If the formatted Imgur URL is not available, use the project link without the certificate
     const url = `https://www.instagram.com/create/details/?source=instagram_web_create_flow&caption=Experience the project and stand against drug addiction on: sudo-choices.vercel.app`;
+    window.open(url, "_blank");
+  }
+}
+
+function twitterShare() {
+  // Check if the formatted Imgur URL is available
+  if (formatedCertificateurl) {
+    const url = `https://twitter.com/intent/tweet?text=Just Became a part of the Anti Drug Movement here is my certificate 📜: ${formatedCertificateurl}%0AExperience the project and stand against drug addiction on: sudo-choices.vercel.app`;
+    window.open(url, "_blank");
+  } else {
+    // If the formatted Imgur URL is not available, use the project link without the certificate
+    const url = `https://twitter.com/intent/tweet?text=Experience the project and stand against drug addiction on: sudo-choices.vercel.app`;
     window.open(url, "_blank");
   }
 }

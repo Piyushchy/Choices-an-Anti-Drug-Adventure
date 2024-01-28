@@ -201,7 +201,7 @@ main{
     height: 100vh;
 }
 
-.thankyou{
+.head-message{
     width: 100%;;
     display: flex;
     justify-content: center;
@@ -214,7 +214,6 @@ main{
     background-size: 70% ;
     background-position-y: 100%;
     padding: 50px 0;
-
     animation: confetti 10s ease-in-out infinite;
 }
 
@@ -229,7 +228,7 @@ main{
 }
 
 
-.thankyou h1{
+.head-message h1{
     font-family: 'popins', sans-serif;
     font-size: 30px;
     font-weight: 700;
@@ -338,6 +337,7 @@ main{
 }
 
 #result{
+    font-family: "Cormorant Garamond", serif;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -630,13 +630,13 @@ main{
         display: flex;
     }
 
-    .thankyou{
+    .head-message{
         background-size: 100% ;
         background-position-y: 100%;
         padding: 20px 0;
     }
 
-    .thankyou h1{
+    .head-message h1{
         font-size: 20px;
         padding: 5px 10px;
     }

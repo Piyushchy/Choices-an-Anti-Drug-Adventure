@@ -9,6 +9,8 @@ const fullScreenMsg = document.querySelector(".fullscreen-msg");
 
 let sharedIsStoryTelling = localStorage.getItem("isStorytelling");
 
+sessionStorage.setItem("BadEnding", "false");
+
 console.log("sharedIsStoryTelling = " + sharedIsStoryTelling);
 
 let isIntroShown = false;
