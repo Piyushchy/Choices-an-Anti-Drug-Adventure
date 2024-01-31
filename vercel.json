@@ -1,0 +1,14 @@
+{
+    "version": 2,
+    "builds": [
+      { "src": "Back-End/**", "use": "@vercel/node" },
+      { "src": "**/*.html", "use": "@vercel/static" },
+      { "src": "**/*.css", "use": "@vercel/static" },
+      { "src": "**/*.js", "use": "@vercel/static" }
+    ],
+    "routes": [
+      { "handle": "vercel/pathfs" },
+      { "src": "/(.*)", "dest": "/$1" }
+    ]
+  }
+  
