@@ -118,8 +118,16 @@ function formatStoryString(inputString) {
   inputString = inputString.replace(/Choice 1:.*/g, "");
   inputString = inputString.replace(/Choice 2:.*/g, "");
 
+  if (choice1Content.includes(choice2Content)) {
+    choice1Content = choice1Content.replace(choice2Content, "").trim();
+  }
+
   choice1Element.innerHTML = choice1Content;
   choice2Element.innerHTML = choice2Content;
+  if (inputString.length > 850) {
+    generate();
+  }
+
   return inputString;
 }
 
