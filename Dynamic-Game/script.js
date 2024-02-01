@@ -51,13 +51,16 @@ async function generate() {
 }
 
 async function sendUserInput(userInput) {
-  const response = await fetch("http://20.235.250.238:3000/api/story", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ userInput }),
-  });
+  const response = await fetch(
+    "https://choices-an-anti-drug-adventue-back-end.vercel.app/api/story",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ userInput }),
+    }
+  );
 
   if (!response.ok) {
     throw new Error(`HTTP error! Status: ${response.status}`);
