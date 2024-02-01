@@ -265,6 +265,82 @@ main {
         font-weight: 700;
     }
 
+    .new-features{
+        height:170vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        gap: 20px;
+        padding:50px 0;
+    }
+
+    .new-features h1{
+        color:white;
+        font-family: 'Lora', serif;
+        font-size: 50px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .new-features-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60%;
+        height: 60%;
+    }
+
+    .new-feature-card{
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        width: 50%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.774);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        margin: 0 20px;
+        padding: 30px 10px;
+        transition: all 0.3s ease;
+    }
+
+    .new-feature-card img{
+        height: 200px;
+        margin-bottom: 50px;
+        border-radius: 10px;
+        border: 3px solid #ffffffa1;
+        padding: 10px;
+    }
+
+    .new-feature-card h3{
+        color: white;
+        font-family: 'poppins', sans-serif;
+        font-size: 30px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .new-feature-card p{
+        color: white;
+        font-family: 'popins', sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    .new-feature-card:hover{
+        transform: scale(1.1);
+        box-shadow: 0px 0px 20px #0edf23;
+    }
+
     .about {
         color: #fff;
         display: flex;
@@ -449,7 +525,7 @@ main {
         bottom: 10px;
         right: 20px;
         /* border: 1px solid red; */
-        background-color: rgba(255, 255, 255, 0.2);
+        background-color: rgba(2, 2, 2, 0.452);
         backdrop-filter: blur(5px);
         border-radius: 20px;
         right: -100%;
@@ -457,7 +533,7 @@ main {
     }
 
     .game-redirect-container h2 {
-        color: black;
+        color: white;
         /* text-shadow: 2px 5px 5px #0edf23; */
         font-family: 'Lora', serif;
         font-size: 50px;
@@ -481,6 +557,7 @@ main {
     }
 
     .rules li {
+        color:white;
         margin-bottom: 20px;
         font-family:'Lora', serif;
         font-size: 20px;
@@ -488,67 +565,35 @@ main {
         cursor: default;
     }
  
-    .game-redirect-button {
-        width: 220px;
-        height: 50px;
-        border: none;
-        outline: none;
+    .game-redirect{
+        text-decoration: none;
         color: #fff;
-        background: #111;
+        font-size: 30px;
+        font-weight: 500;
+        outline: none;
         cursor: pointer;
-        position: relative;
-        z-index: 0;
+        text-align: center;
+        padding: 5px 10px;
         border-radius: 10px;
-        font-size: 20px;
-        margin-bottom: 20px;
+        border: 3px solid #fff;
+        transition: all 0.3s ease;
+        animation: background-blink 1s infinite;
     }
-    
-    .game-redirect-button:before {
-        content: '';
-        background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-        position: absolute;
-        top: -2px;
-        left:-2px;
-        background-size: 400%;
-        z-index: -1;
-        filter: blur(5px);
-        width: calc(100% + 4px);
-        height: calc(100% + 4px);
-        animation: glowing 20s linear infinite;
-        opacity: 0;
-        transition: opacity .3s ease-in-out;
-        border-radius: 10px;
+
+    @keyframes background-blink{
+        0%{
+            filter: drop-shadow(0px 0px 10px #0edf23);
+        }
+
+        50%{
+            filter: drop-shadow(0px 0px 20px #0edf23);
+        }
+
+        100%{
+            background-color: #0edf23;
+        }
     }
-    
-    .game-redirect-button:active {
-        color: #000
-    }
-    
-    .game-redirect-button:active:after {
-        background: transparent;
-    }
-    
-    .game-redirect-button:hover:before {
-        opacity: 1;
-    }
-    
-    .game-redirect-button:after {
-        z-index: -1;
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: #111;
-        left: 0;
-        top: 0;
-        border-radius: 10px;
-    }
-    
-    @keyframes glowing {
-        0% { background-position: 0 0; }
-        50% { background-position: 400% 0; }
-        100% { background-position: 0 0; }
-    }
+ 
 
     .footer{
         display: flex;

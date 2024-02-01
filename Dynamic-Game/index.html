@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Game</title>
+    <link rel="icon" href="/assets/tab-logo.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+    </style>
+</head>
+
+<body>
+    <div class="loading-screen">
+        <div class="loading-animation">
+            <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs"
+                type="module"></script>
+
+            <dotlottie-player src="https://lottie.host/c613abaf-1b9b-47df-8c09-63f37032acd3/scJuN4LydM.json"
+                background="transparent" speed="1" style="width: 300px; height: 300px;" loop
+                autoplay></dotlottie-player>
+        </div>
+        <div class="loading-text">Please Wait our Sudo Choices AI is generating a very interesting story for you
+        </div>
+    </div>
+    <nav>
+        <img src="/assets/sudo.png" alt="Logo" class="logo"
+            onclick="window.location='https://sudo-choices.vercel.app/#homeSection'">
+        <ul class="nav-links-container">
+            <li><a href="/index.html" class="nav-link">Home</a></li>
+            <li><a href="" class="nav-link">Anti-Drug Forum</a></li>
+            <li><a href="/VR-Game/index.html" class="nav-link">VR Rehablitation</a></li>
+            <li>
+                <div class="dropdown" onclick="dropDown()">
+                    <a class="nav-link mobile-more">More</a>
+                    <div id="moreDropDown" class="dropdown-content">
+                        <!-- <a href="https://github.com/spark-lucifer/web-scraping-2" class="nav-link">Anti-Drug Forum:
+                            Project</a> -->
+                        <a href="/Pledge-Ceartificate/index.html" class="nav-link">Take Pledge</a>
+                        <a href="/Project-Feedback/index.html" class="nav-link">Project Feedback</a>
+                    </div>
+                    <img src="/assets/dropdown-icon.png" alt="dropdown">
+                </div>
+            </li>
+            <li><a href="/Main-Game/1-Childhood/index.html" class="play-game nav-link">Play Game</a></li>
+        </ul>
+        <button class="hamburger-menu" onclick="toggleMenu()"></button>
+        <div class="menu-overlay">
+            <ul class="menu-overlay-items">
+                <li><a href="/index.html" class="nav-link">Home</a></li>
+                <li><a href="" class="nav-link">Anti-Drug Forum</a></li>
+                <li><a href="/VR-Game/index.html" class="nav-link">VR Rehablitation</a></li>
+                <li onclick="dropDown()">
+                    <div class="mobile-dropdown">
+                        <label class="menu-overlay-link">More</label>
+                        <img src="/assets/dropdown-icon.png" alt="dropdown">
+                        <div id="moreDropDown" class="dropdown-content mobile-dropdown-content">
+                            <!-- <a href="https://github.com/spark-lucifer/web-scraping-2" class="nav-link">Anti-Drug
+                                Forum</a> -->
+                            <a href="/Pledge-Ceartificate/index.html" class="nav-link">Take Pledge</a>
+                            <a href="/Project-Feedback/index.html" class="nav-link">Project Feedback</a>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="/Main-Game/1-Childhood/index.html" class="play-game menu-overlay-link">Play Game</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <div class="game-container">
+            <div class="story">
+                <p class="story-text">Sudo: Choices AI is generating story here
+                </p>
+            </div>
+            <div class="option-heading">Select any one choice</div>
+            <div class="options-container">
+                <div class="option" id="option1" title="option 1" onclick="updateStory(1)">Choice 1</div>
+                <div class="option" id="option2" title="option 2" onclick="updateStory(2)">Choice 2</div>
+            </div>
+        </div>
+    </main>
+
+    <div class="footer">
+        <div class="footer-message">
+            Made with ❤️ by <strong>Sudo</strong>
+        </div>
+        <div class="footer-links">
+            <a href="https://github.com/spark-lucifer/Choices-an-Anti-Drug-Adventure" target="_blank">GitHub</a>
+            <a href="https://youtu.be/hTmDJXYRnEk" target="_blank">YouTube</a>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

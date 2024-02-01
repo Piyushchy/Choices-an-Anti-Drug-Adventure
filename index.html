@@ -40,34 +40,30 @@
         <img src="/assets/sudo.png" alt="Logo" class="logo"
             onclick="window.location='https://sudo-choices.vercel.app/#homeSection'">
         <ul class="nav-links-container">
-            <li><a href="https://sudo-choices.vercel.app/#homeSection" class="nav-link">Home</a></li>
-            <li><a href="https://sudo-choices.vercel.app/#aboutTeam" class="nav-link">About Team:
-                    <strong>Sudo</strong></a></li>
-            <li><a href="https://sudo-choices.vercel.app/#aboutProject" class="nav-link">About Project</a></li>
-            <li>
+            <li><a href="" class="nav-link">Anti-Drug Forum</a></li>
+            <li><a href="/Dynamic-Game/index.html" class="nav-link">Dynamic Game</a></li>
+            <li><a href="/VR-Game/index.html" class="nav-link">VR Rehablitation</a></li>
+            <!-- <li>
                 <div class="dropdown" onclick="dropDown()">
                     <a class="nav-link mobile-more">More</a>
                     <div id="moreDropDown" class="dropdown-content">
                         <a href="https://github.com/spark-lucifer/web-scraping-2" class="nav-link">Anti-Drug Forum</a>
                         <a href="/Pledge-Ceartificate/index.html" class="nav-link">Take Pledge</a>
                         <a href="/Project-Feedback/index.html" class="nav-link">Project Feedback</a>
+                        <a href="/Dynamic-Game/index.html" class="nav-link">Dynamic Game</a>
                     </div>
                     <img src="/assets/dropdown-icon.png" alt="dropdown">
                 </div>
-            </li>
+            </li> -->
             <li><a href="/Main-Game/1-Childhood/index.html" class="play-game nav-link">Play Game</a></li>
         </ul>
         <button class="hamburger-menu" onclick="toggleMenu()"></button>
         <div class="menu-overlay">
             <ul class="menu-overlay-items">
-                <li><a href="https://sudo-choices.vercel.app/#homeSection" onclick="hideMenu()"
-                        class="menu-overlay-link">Home</a></li>
-                <li><a href="https://sudo-choices.vercel.app/#aboutTeam" onclick="hideMenu()"
-                        class="menu-overlay-link">About Team:
-                        <strong>Sudo</strong></a></li>
-                <li><a href="https://sudo-choices.vercel.app/#aboutProject" onclick="hideMenu()"
-                        class="menu-overlay-link">About Project</a></li>
-                <li onclick="dropDown()">
+                <li><a href="" class="nav-link">Anti-Drug Forum</a></li>
+                <li><a href="/Dynamic-Game/index.html" class="nav-link">Dynamic Game</a></li>
+                <li><a href="/VR-Game/index.html" class="nav-link">VR Rehablitation</a></li>
+                <!-- <li onclick="dropDown()">
                     <div class="mobile-dropdown">
                         <label class="menu-overlay-link">More</label>
                         <img src="/assets/dropdown-icon.png" alt="dropdown">
@@ -78,7 +74,7 @@
                             <a href="/Project-Feedback/index.html" class="nav-link">Project Feedback</a>
                         </div>
                     </div>
-                </li>
+                </li> -->
                 <li><a href="/Main-Game/1-Childhood/index.html" class="play-game menu-overlay-link">Play Game</a></li>
             </ul>
         </div>
@@ -101,7 +97,6 @@
                 try to make the right choices to get the best ending.
                 <br>
                 <br>
-                Click the Start game button to begin.
             </p>
         </div>
         <div class="game-redirect-container">
@@ -113,11 +108,36 @@
                 <li>Game is Best Played in Full-Screen</li>
                 <li>You can turn off story teller from Menu</li>
             </ul>
-            <button class="game-redirect-button"
-                onclick="window.location.href ='/Main-Game/1-Childhood/index.html'">Start Game</button>
+            <button class="play-game game-redirect"
+                onclick="window.location.href ='/Main-Game/1-Childhood/index.html'">Start
+                Game</button>
         </div>
     </main>
-
+    <div class="new-features">
+        <h1>What's New?</h1>
+        <div class="new-features-container">
+            <div class="new-feature-card" onclick="window.href='/Main-Game/1-Childhood/index.html'">
+                <img src="/assets/forum-ss.png" alt="Feature 1">
+                <h3>Interactive Story Game</h3>
+                <p>Play a Interactive Story game consisting of different choices and visuals</p>
+            </div>
+            <div class="new-feature-card">
+                <img src="/assets/forum-ss.png" alt="Feature 2">
+                <h3>Sudo:<br> Anti-Drug Forum</h3>
+                <p> Connect with people who are fighting against drugs and Councellors</p>
+            </div>
+            <div class="new-feature-card">
+                <img src="/assets/dynamic-game-ss.png" alt="Feature 3" onclick="window.href='/Dynamic-Game/index.html">
+                <h3>Dynamic Game</h3>
+                <p>Everytime experience a new story line with Sudo AI</p>
+            </div>
+        </div>
+        <div class=" new-feature-card">
+            <img src="/assets/feature-2.png" alt="Feature 4">
+            <h3>VR Rehabilitation</h3>
+            <p>Now you can experience VR Anti-Drug Rehablitation from your comfort</p>
+        </div>
+    </div>
     <div id="aboutTeam" class="about about-team">
         <h1>About Our Team: <img src="/assets/sudo.png" height="40px"></h1>
         <div class="team-members">
