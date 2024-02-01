@@ -52,7 +52,7 @@ async function generate() {
 
 async function sendUserInput(userInput) {
   const response = await fetch(
-    "https://ubiquitous-sprinkles-b6020b.netlify.app/api/story",
+    "https://engaged-griffon-crucial.ngrok-free.app/api/story",
     {
       method: "POST",
       headers: {
