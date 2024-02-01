@@ -51,13 +51,16 @@ async function generate() {
 }
 
 async function sendUserInput(userInput) {
-  const response = await fetch("https://sudo-choices-kunalshah017/api/story", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ userInput }),
-  });
+  const response = await fetch(
+    "https://ubiquitous-sprinkles-b6020b.netlify.app/api/story",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ userInput }),
+    }
+  );
 
   if (!response.ok) {
     throw new Error(`HTTP error! Status: ${response.status}`);
