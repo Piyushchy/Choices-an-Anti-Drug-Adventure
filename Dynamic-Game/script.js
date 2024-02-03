@@ -52,7 +52,7 @@ async function generate() {
 
 async function sendUserInput(userInput) {
   const response = await fetch(
-    "https://engaged-griffon-crucial.ngrok-free.app/api/story",
+    "https://grouse-evolving-cheetah.ngrok-free.app/api/story",
     {
       method: "POST",
       headers: {

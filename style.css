@@ -266,14 +266,14 @@ main {
     }
 
     .new-features{
-        height:170vh;
+        height:190vh;
         background-color: rgba(0, 0, 0, 0.5);
         backdrop-filter: blur(10px);
         display: flex;
         flex-direction: column;
         /* justify-content: center; */
         align-items: center;
-        gap: 20px;
+        gap: 50px;
         padding:50px 0;
     }
 
@@ -337,7 +337,7 @@ main {
     }
 
     .new-feature-card:hover{
-        transform: scale(1.1);
+        transform: scale(1.05);
         box-shadow: 0px 0px 20px #0edf23;
     }
 
@@ -623,6 +623,7 @@ main {
     .footer-links a:hover{
         border-bottom: 2px solid #ffffff;
     }
+        
 
     @media screen and (max-width: 1150px) {
         .nav-links-container {
@@ -635,6 +636,24 @@ main {
 
         .description {
             width: 50%;
+        }
+        .new-features{
+            height: 300vh;
+        }
+
+        .new-features-container{
+            margin: 20px 0;
+            width: 90%;
+            flex-direction: column;
+        }
+
+        .new-feature-card{
+            width: 70%;
+            margin: 20px 0;
+        }
+
+        .new-feature-card img{
+            width: 100%;
         }
         
     }
